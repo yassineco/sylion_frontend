@@ -28,16 +28,44 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-6"
+          transition={{ 
+            duration: 1.2, 
+            delay: 0.2,
+            type: "spring",
+            stiffness: 100
+          }}
+          className="relative mb-8"
         >
-          <img 
-            src={logoUrl} 
-            alt="SYLION TECH" 
-            className="h-32 md:h-40 w-auto mx-auto mb-6 drop-shadow-2xl"
-          />
+          {/* Glow effect background */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse" />
+          </div>
+          
+          {/* Logo avec effets */}
+          <div className="relative">
+            <motion.img 
+              src={logoUrl} 
+              alt="SYLION TECH" 
+              className="h-48 md:h-64 w-auto mx-auto relative z-10"
+              style={{
+                filter: "drop-shadow(0 0 40px rgba(34, 211, 238, 0.6)) drop-shadow(0 0 80px rgba(34, 211, 238, 0.3))",
+              }}
+              animate={{
+                filter: [
+                  "drop-shadow(0 0 40px rgba(34, 211, 238, 0.6)) drop-shadow(0 0 80px rgba(34, 211, 238, 0.3))",
+                  "drop-shadow(0 0 50px rgba(34, 211, 238, 0.8)) drop-shadow(0 0 100px rgba(34, 211, 238, 0.4))",
+                  "drop-shadow(0 0 40px rgba(34, 211, 238, 0.6)) drop-shadow(0 0 80px rgba(34, 211, 238, 0.3))",
+                ],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+          </div>
         </motion.div>
 
         <motion.p

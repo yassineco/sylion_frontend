@@ -22,11 +22,17 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" data-testid="link-logo">
-            <img 
-              src={logoUrl} 
-              alt="SYLION TECH" 
-              className="h-10 w-auto hover:opacity-80 transition-opacity"
-            />
+            <div className="relative group">
+              <div className="absolute inset-0 bg-cyan-500/20 rounded-lg blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <img 
+                src={logoUrl} 
+                alt="SYLION TECH" 
+                className="h-12 w-auto relative z-10 transition-all duration-300 group-hover:scale-105"
+                style={{
+                  filter: "drop-shadow(0 0 8px rgba(34, 211, 238, 0.4))",
+                }}
+              />
+            </div>
           </Link>
           <div className="hidden md:flex items-center gap-2">
             {links.slice(1).map((link) => (
