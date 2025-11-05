@@ -1,26 +1,89 @@
 import CountUp from "./animations/CountUp";
+import { motion } from "framer-motion";
+import { TrendingUp, Clock, Shield } from "lucide-react";
 
 export default function KPIs() {
   const data = [
-    { value: 92, label: "gain de productivité" },
-    { value: 48, label: "heures gagnées / mois" },
-    { value: 99, label: "fiabilité IA" },
+    { 
+      value: 92, 
+      label: "gain de productivité",
+      icon: TrendingUp,
+      description: "Automatisation des tâches répétitives"
+    },
+    { 
+      value: 48, 
+      label: "heures gagnées / mois",
+      icon: Clock,
+      description: "Temps libéré pour l'essentiel"
+    },
+    { 
+      value: 99, 
+      label: "fiabilité IA",
+      icon: Shield,
+      description: "Précision et performance garanties"
+    },
   ];
 
   return (
-    <section className="py-20 bg-[#0B0B0B] text-white text-center">
-      <div className="flex flex-wrap justify-center gap-12 px-6">
-        {data.map((kpi) => (
-          <div key={kpi.label} data-testid={`kpi-${kpi.label.replace(/\s+/g, '-')}`}>
-            <CountUp 
-              value={kpi.value} 
-              duration={2} 
-              className="text-5xl md:text-6xl font-bold" 
-              suffix="%" 
-            />
-            <p className="text-sm mt-2 uppercase tracking-wide text-gray-400">{kpi.label}</p>
-          </div>
-        ))}
+    <section className="relative py-32 bg-background text-foreground overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0B0B0B] via-background to-background" />
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Des résultats <span className="bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] bg-clip-text text-transparent">mesurables</span>
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            L'impact de l'IA sur votre productivité
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {data.map((kpi, index) => (
+            <motion.div
+              key={kpi.label}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="relative group"
+              data-testid={`kpi-${kpi.label.replace(/\s+/g, '-')}`}
+            >
+              <div className="relative p-8 rounded-2xl bg-gradient-to-br from-card to-card/50 border border-border hover:border-[#4F46E5]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[#4F46E5]/10">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#4F46E5]/5 to-[#7C3AED]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                
+                <div className="relative">
+                  <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-[#4F46E5]/10 to-[#7C3AED]/10 mb-6">
+                    <kpi.icon className="w-6 h-6 text-[#4F46E5]" />
+                  </div>
+                  
+                  <div className="mb-4">
+                    <CountUp 
+                      value={kpi.value} 
+                      duration={2} 
+                      className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent" 
+                      suffix="%" 
+                    />
+                  </div>
+                  
+                  <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-2">
+                    {kpi.label}
+                  </p>
+                  
+                  <p className="text-sm text-muted-foreground/80">
+                    {kpi.description}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
