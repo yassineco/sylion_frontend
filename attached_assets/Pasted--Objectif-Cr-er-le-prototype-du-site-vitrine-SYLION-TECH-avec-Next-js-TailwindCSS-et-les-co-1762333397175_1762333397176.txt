@@ -1,0 +1,176 @@
+🎯 Objectif :
+Créer le prototype du site vitrine **SYLION TECH** avec Next.js, TailwindCSS et les composants ReactBits.
+
+---
+
+🧩 Stack technique :
+- Next.js 14 (App Router)
+- TypeScript
+- TailwindCSS
+- ReactBits (animations UI)
+- Framer Motion (animations)
+- Design System custom (noir / blanc / accent dégradé)
+
+---
+
+🧱 Structure du projet :
+/app
+page.tsx → page d’accueil
+/produits/page.tsx
+/services/page.tsx
+/tarifs/page.tsx
+/contact/page.tsx
+/components
+Hero.tsx
+KPIs.tsx
+Features.tsx
+CTA.tsx
+ui/Button.tsx
+/styles
+globals.css
+tailwind.config.js (avec tokens)
+
+markdown
+Copier le code
+
+---
+
+🎨 Design System :
+- **Couleurs**
+  - noir `#0B0B0B`
+  - blanc `#FFFFFF`
+  - accent dégradé `from-[#4F46E5] to-[#7C3AED]`
+- **Typographie** : Inter (texte) + JetBrains Mono (titres secondaires)
+- **Radius** : `2xl`
+- **Ombres** : douces (shadow-lg)
+- **Animations** : fluides, sobres
+
+---
+
+🚀 Étapes de génération :
+1. `npx create-next-app@latest syliontech --ts --eslint --tailwind --src-dir --app --import-alias "@/*"`
+2. `cd syliontech`
+3. `npm i reactbits framer-motion`
+4. Créer les composants suivants :
+
+**components/Hero.tsx**
+```tsx
+"use client";
+import { ShinyText } from "reactbits";
+export default function Hero() {
+  return (
+    <section className="min-h-[80vh] flex flex-col items-center justify-center text-center bg-white text-black px-6">
+      <h1 className="text-5xl font-bold mb-4">
+        <ShinyText text="SYLION TECH" speed={3} />
+      </h1>
+      <p className="text-lg mb-8 max-w-xl">
+        L’IA qui parle métier. Des assistants et services IA intégrés à vos outils.
+      </p>
+      <a href="#contact" className="px-6 py-3 rounded-2xl bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] text-white hover:opacity-90 transition">
+        Demander une démo
+      </a>
+    </section>
+  );
+}
+components/KPIs.tsx
+
+tsx
+Copier le code
+"use client";
+import { CountUp } from "reactbits";
+export default function KPIs() {
+  const data = [
+    { value: 92, label: "gain de productivité" },
+    { value: 48, label: "heures gagnées / mois" },
+    { value: 99, label: "fiabilité IA" },
+  ];
+  return (
+    <section className="py-20 bg-[#0B0B0B] text-white text-center">
+      <div className="flex flex-wrap justify-center gap-12">
+        {data.map((kpi) => (
+          <div key={kpi.label}>
+            <CountUp value={kpi.value} duration={2} className="text-5xl font-bold" suffix="%" />
+            <p className="text-sm mt-2 uppercase">{kpi.label}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+components/Features.tsx
+
+tsx
+Copier le code
+"use client";
+import { AnimatedList } from "reactbits";
+export default function Features() {
+  const items = [
+    "Assistant IA pour vos sites et apps",
+    "RAG-as-a-Service hébergé localement",
+    "Intégrations CRM / CMI / WhatsApp",
+  ];
+  return (
+    <section className="py-24 bg-white text-black text-center">
+      <h2 className="text-3xl font-bold mb-12">Nos Solutions</h2>
+      <div className="flex flex-col items-center">
+        <AnimatedList items={items} animation="slideUp" />
+      </div>
+    </section>
+  );
+}
+components/CTA.tsx
+
+tsx
+Copier le code
+"use client";
+import { ShinyText } from "reactbits";
+export default function CTA() {
+  return (
+    <section className="py-20 bg-[#0B0B0B] text-white text-center">
+      <h2 className="text-4xl mb-6 font-semibold">
+        <ShinyText text="Prêt à booster votre performance ?" speed={2} />
+      </h2>
+      <a href="#contact" className="px-8 py-3 rounded-2xl bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] text-white hover:opacity-90 transition">
+        Contactez-nous
+      </a>
+    </section>
+  );
+}
+app/page.tsx
+
+tsx
+Copier le code
+import Hero from "@/components/Hero";
+import KPIs from "@/components/KPIs";
+import Features from "@/components/Features";
+import CTA from "@/components/CTA";
+
+export default function HomePage() {
+  return (
+    <main>
+      <Hero />
+      <KPIs />
+      <Features />
+      <CTA />
+    </main>
+  );
+}
+🔧 Conseils Replit :
+
+Utilise la console “Shell” pour les commandes npm.
+
+Active le “Web Preview” pour voir le rendu live.
+
+Sauvegarde régulièrement (autosave + commits Git).
+
+Une fois prêt : “Connect to GitHub” → Push to Repo → ensuite git clone sur ton poste VS Code.
+
+✅ Résultat attendu :
+Un prototype moderne, responsive et fluide avec :
+
+Effets animés ReactBits dosés
+
+Charte blanche/noire + accent violet/bleu
+
+Pages vides prêtes pour extension (produits, tarifs, contact)
+
