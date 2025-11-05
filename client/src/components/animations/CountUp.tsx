@@ -1,5 +1,5 @@
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { useEffect } from "react";
+import { useMotionValue, animate, useMotionValueEvent } from "framer-motion";
+import { useEffect, useState } from "react";
 
 interface CountUpProps {
   value: number;
@@ -10,7 +10,11 @@ interface CountUpProps {
 
 export default function CountUp({ value, duration = 2, className = "", suffix = "" }: CountUpProps) {
   const count = useMotionValue(0);
-  const rounded = useTransform(count, (latest) => Math.round(latest));
+  const [displayValue, setDisplayValue] = useState(0);
+
+  useMotionValueEvent(count, "change", (latest) => {
+    setDisplayValue(Math.round(latest));
+  });
 
   useEffect(() => {
     const controls = animate(count, value, { duration });
@@ -18,9 +22,9 @@ export default function CountUp({ value, duration = 2, className = "", suffix = 
   }, [value, duration, count]);
 
   return (
-    <motion.span className={className}>
-      {rounded as any}
+    <span className={className}>
+      {displayValue}
       {suffix}
-    </motion.span>
+    </span>
   );
 }
