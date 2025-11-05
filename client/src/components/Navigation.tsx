@@ -1,5 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "./ui/button";
+import logoUrl from "@assets/sylion-logo.png";
 
 export default function Navigation() {
   const [location] = useLocation();
@@ -21,9 +22,11 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" data-testid="link-logo">
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] bg-clip-text text-transparent">
-              SYLION TECH
-            </h2>
+            <img 
+              src={logoUrl} 
+              alt="SYLION TECH" 
+              className="h-10 w-auto hover:opacity-80 transition-opacity"
+            />
           </Link>
           <div className="hidden md:flex items-center gap-2">
             {links.slice(1).map((link) => (

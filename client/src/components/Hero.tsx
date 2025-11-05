@@ -5,6 +5,7 @@ import GridPattern from "./backgrounds/GridPattern";
 import FloatingOrbs from "./backgrounds/FloatingOrbs";
 import { motion } from "framer-motion";
 import { Sparkles, Zap, Brain } from "lucide-react";
+import logoUrl from "@assets/sylion-logo.png";
 
 export default function Hero() {
   return (
@@ -26,14 +27,18 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        <motion.h1
+        <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-6xl md:text-8xl font-bold mb-6 leading-tight"
+          className="mb-6"
         >
-          <ShinyText text="SYLION TECH" speed={3} />
-        </motion.h1>
+          <img 
+            src={logoUrl} 
+            alt="SYLION TECH" 
+            className="h-32 md:h-40 w-auto mx-auto mb-6 drop-shadow-2xl"
+          />
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
