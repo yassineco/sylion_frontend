@@ -14,19 +14,19 @@ export default function ProductsPage() {
           Nos Produits
         </h1>
         <p className="text-xl text-muted-foreground mb-12">
-          Découvrez notre gamme de solutions IA sur mesure
+          Des solutions IA pour automatiser votre WhatsApp et répondre à vos clients 24/7
         </p>
         <div className="space-y-8">
           <div className="p-6 rounded-2xl border border-border">
-            <h3 className="text-2xl font-semibold mb-3">Assistant IA Personnalisé</h3>
+            <h3 className="text-2xl font-semibold mb-3">Assistant WhatsApp IA</h3>
             <p className="text-muted-foreground">
-              Intégrez un assistant intelligent qui comprend votre métier et répond aux questions de vos clients 24/7.
+              Un assistant intelligent qui répond automatiquement aux messages WhatsApp de vos clients 24/7. Comprend Français, Arabe, Darija et Anglais. Opérationnel en 10 minutes.
             </p>
           </div>
           <div className="p-6 rounded-2xl border border-border">
-            <h3 className="text-2xl font-semibold mb-3">RAG-as-a-Service</h3>
+            <h3 className="text-2xl font-semibold mb-3">Base de Connaissances IA (RAG)</h3>
             <p className="text-muted-foreground">
-              Service de recherche augmentée par génération hébergé localement pour une sécurité maximale de vos données.
+              Transformez vos documents (PDF, FAQ, catalogues) en base de connaissances. L'IA répond à partir de vos propres informations, hébergées au Maroc.
             </p>
           </div>
         </div>

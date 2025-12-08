@@ -14,25 +14,25 @@ export default function ServicesPage() {
           Nos Services
         </h1>
         <p className="text-xl text-gray-400 mb-12">
-          Un accompagnement complet pour votre transformation IA
+          Un accompagnement complet pour déployer votre Assistant WhatsApp IA
         </p>
         <div className="space-y-8">
           <div className="p-6 rounded-2xl border border-gray-800">
-            <h3 className="text-2xl font-semibold mb-3">Consulting IA</h3>
+            <h3 className="text-2xl font-semibold mb-3">Déploiement Express</h3>
             <p className="text-gray-400">
-              Audit de vos processus et identification des opportunités d'automatisation par l'IA.
+              Configuration de votre Assistant WhatsApp IA et connexion à votre numéro. Opérationnel en 10 minutes.
             </p>
           </div>
           <div className="p-6 rounded-2xl border border-gray-800">
-            <h3 className="text-2xl font-semibold mb-3">Intégration</h3>
+            <h3 className="text-2xl font-semibold mb-3">Indexation de Documents (RAG)</h3>
             <p className="text-gray-400">
-              Connexion transparente avec vos outils existants : CRM, CMI, WhatsApp, et plus encore.
+              Indexation de vos FAQ, catalogues et documents. L'IA répond à partir de vos propres informations.
             </p>
           </div>
           <div className="p-6 rounded-2xl border border-gray-800">
-            <h3 className="text-2xl font-semibold mb-3">Formation</h3>
+            <h3 className="text-2xl font-semibold mb-3">Formation et Support FR/Darija</h3>
             <p className="text-gray-400">
-              Formation de vos équipes pour maximiser l'utilisation de vos nouveaux outils IA.
+              Formation de vos équipes en Français et Darija. Support continu pour optimiser votre assistant.
             </p>
           </div>
         </div>

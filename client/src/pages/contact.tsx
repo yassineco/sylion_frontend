@@ -16,7 +16,7 @@ export default function ContactPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    alert("Merci ! Nous vous contacterons bientôt.");
+    alert("Merci ! Notre équipe vous contactera sous 24h en Français ou Darija.");
     setFormData({ name: "", email: "", company: "", message: "" });
   };
 
@@ -34,28 +34,28 @@ export default function ContactPage() {
               Contactez-nous
             </h1>
             <p className="text-xl text-gray-400 mb-8">
-              Parlons de votre projet et découvrons comment l'IA peut transformer votre entreprise
+              Prêt à automatiser votre WhatsApp ? Demandez une démo et découvrez comment répondre à vos clients 24/7.
             </p>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <Mail className="w-6 h-6 text-[#4F46E5] flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold mb-1">Email</h3>
-                  <p className="text-gray-400">contact@syliontech.com</p>
+                  <p className="text-gray-400">contact@syliontech.ma</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <Phone className="w-6 h-6 text-[#4F46E5] flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold mb-1">Téléphone</h3>
-                  <p className="text-gray-400">+33 1 23 45 67 89</p>
+                  <h3 className="font-semibold mb-1">Téléphone / WhatsApp</h3>
+                  <p className="text-gray-400">+212 6 00 00 00 00</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <MapPin className="w-6 h-6 text-[#4F46E5] flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold mb-1">Adresse</h3>
-                  <p className="text-gray-400">Paris, France</p>
+                  <p className="text-gray-400">Casablanca, Maroc</p>
                 </div>
               </div>
             </div>
@@ -121,7 +121,7 @@ export default function ContactPage() {
                 className="w-full rounded-2xl bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] text-white hover:opacity-90"
                 data-testid="button-submit"
               >
-                Envoyer
+                Demander une démo WhatsApp
               </Button>
             </form>
           </div>

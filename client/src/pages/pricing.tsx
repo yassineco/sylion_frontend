@@ -5,41 +5,41 @@ import { Check } from "lucide-react";
 export default function PricingPage() {
   const plans = [
     {
-      name: "Starter",
-      price: "499€",
+      name: "PME Starter",
+      price: "990 DH",
       period: "/mois",
       features: [
-        "Assistant IA de base",
-        "Jusqu'à 1000 requêtes/mois",
+        "1 numéro WhatsApp",
+        "Jusqu'à 500 conversations/mois",
+        "Multilingue FR/AR/Darija/EN",
         "Support email",
-        "1 intégration incluse",
       ],
     },
     {
       name: "Business",
-      price: "1 499€",
+      price: "2 490 DH",
       period: "/mois",
       features: [
-        "Assistant IA avancé",
-        "Requêtes illimitées",
-        "Support prioritaire 24/7",
-        "Intégrations illimitées",
-        "RAG personnalisé",
+        "Jusqu'à 3 numéros WhatsApp",
+        "Conversations illimitées",
+        "Base RAG avancée",
+        "Support prioritaire FR/Darija",
+        "Intégration CRM",
         "Analytics détaillés",
       ],
       popular: true,
     },
     {
-      name: "Enterprise",
+      name: "Pro / Entreprise",
       price: "Sur devis",
       period: "",
       features: [
-        "Solution sur mesure",
-        "Hébergement dédié",
+        "Numéros illimités",
+        "Hébergement dédié Maroc",
         "SLA garanti",
         "Account manager dédié",
         "Formation sur site",
-        "Développements spécifiques",
+        "API et développements",
       ],
     },
   ];
@@ -57,7 +57,7 @@ export default function PricingPage() {
             Tarifs
           </h1>
           <p className="text-xl text-muted-foreground">
-            Choisissez la formule adaptée à vos besoins
+            Choisissez la formule adaptée à votre PME. Prix en Dirhams marocains.
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
@@ -73,7 +73,7 @@ export default function PricingPage() {
             >
               {plan.popular && (
                 <span className="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] text-white text-sm font-medium mb-4">
-                  Populaire
+                  Recommandé
                 </span>
               )}
               <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
@@ -98,7 +98,7 @@ export default function PricingPage() {
                 variant={plan.popular ? "default" : "outline"}
                 data-testid={`button-select-${plan.name.toLowerCase()}`}
               >
-                Choisir {plan.name}
+                Demander une démo
               </Button>
             </div>
           ))}

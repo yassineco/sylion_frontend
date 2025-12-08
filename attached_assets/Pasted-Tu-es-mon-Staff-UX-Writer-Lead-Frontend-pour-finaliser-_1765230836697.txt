@@ -1,0 +1,113 @@
+Tu es mon Staff UX Writer + Lead Frontend pour finaliser le site SYLION.
+
+Objectif global :
+Transformer définitivement TOUT le site (home + pages internes) en une plateforme orientée “WhatsApp IA pour PME marocaines”, tout en conservant 100% du design, de la charte graphique et des composants actuels.
+
+Important :
+- NE MODIFIE PAS le design (classement CSS, couleurs, spacing, layout).
+- NE CHANGE PAS le style visuel premium actuel.
+- Interviens UNIQUEMENT sur le contenu textuel, les titres, sous-titres, descriptions, labels, CTA.
+- Harmonise tous les textes pour que l'ensemble du site suive la même identité éditoriale.
+
+Ton style doit être :
+- Professionnel, orienté PME marocaines.
+- Simple, clair, centré sur les bénéfices business.
+- Axé sur WhatsApp, automatisation, gain de temps, disponibilité 24/7, FR/AR/Darija.
+- Cohérent avec le ton adopté dans la nouvelle page d’accueil déjà mise à jour.
+
+---
+
+# 🎯 Ce que tu dois faire concrètement
+
+## 1. Revoir TOUTES les pages internes (Produits, Services, Tarifs, Contact)
+Et adapter leur contenu pour que :
+
+- Le produit principal soit clairement « Assistant WhatsApp IA ».
+- Le RAG soit positionné comme une option avancée / module IA.
+- Les solutions avancées (CRM, API, workflows) soient présentées comme des extensions pour clients PRO.
+
+Recommandations :
+
+### Page Produits
+Aujourd’hui trop générique → DOIT refléter la nouvelle structure :
+
+**Produits :**
+1. Assistant WhatsApp IA (produit principal)
+   - Réponses automatiques
+   - Multilingue
+   - RAG
+   - Cas d’usage PME
+   - Démarrage rapide 10 min
+
+2. Base de Connaissances IA (RAG-as-a-Service)
+   - Upload PDF/Word
+   - Recherche intelligente
+   - Réponses basées sur docs
+
+3. Modules avancés
+   - CRM
+   - API
+   - Workflows
+   - Multi-canal
+
+### Page Services
+Reformuler pour refléter :
+
+- Intégration WhatsApp  
+- Déploiement rapide 10 minutes  
+- Formation & support FR/AR/Darija  
+- Création de flows conversationnels  
+- Indexation des documents RAG  
+
+### Page Tarifs
+Mettre des sections orientées :
+
+- PME Starter  
+- Business  
+- Pro / Entreprise  
+- Add-ons (multi-numéros, RAG, CRM…)  
+
+CTA uniformisé : « Demander une démo WhatsApp »
+
+### Page Contact
+Renforcer wording :
+- "Contactez-nous pour automatiser votre WhatsApp"
+- Ajouter micro-texte rassurant (réponse rapide, support FR & Darija)
+
+---
+
+# 🧠 2. Harmonisation éditoriale globale
+
+Revoir toute occurrence des termes “Assistant IA”, “Chatbot”, “Solutions IA”, etc., et appliquer la nouvelle terminologie :
+
+- Toujours utiliser **Assistant WhatsApp IA**
+- Utiliser “PME marocaines” dans les sous-titres quand pertinent
+- Souligner “Automatisation 24/7”
+- Toujours rappeler : “Comprend FR, AR, Darija, EN”
+- Clarifier partout : “Réponses basées sur vos documents”
+
+---
+
+# ⚙️ 3. Output attendu
+
+Tu dois produire pour chaque page :
+
+- La liste des textes actuels -> version réécrite
+- Le code HTML/JSX/TSX final avec les nouveaux textes intégrés
+- Sans modifier les classes, le layout ou la structure visuelle
+
+Ne produis pas des commentaires ; génère directement :
+- le contenu nettoyé,
+- les nouveaux textes optimisés,
+- et le code final prêt à coller dans le projet.
+
+À la fin, fournis :
+- Un résumé des modifications apportées
+- Un guide de cohérence éditoriale à respecter pour les futures pages.
+
+---
+
+Ton objectif final :
+Rendre tout le site SYLION totalement aligné avec la nouvelle identité :
+**“SYLION – L’Assistant WhatsApp IA pour PME au Maroc”**
+tout en gardant l’esthétique premium existante.
