@@ -1,26 +1,26 @@
 import CountUp from "./animations/CountUp";
 import { motion } from "framer-motion";
-import { TrendingUp, Clock, Shield } from "lucide-react";
+import { MessageCircle, Clock, FileText } from "lucide-react";
 
 export default function KPIs() {
   const data = [
     { 
       value: 92, 
-      label: "gain de productivité",
-      icon: TrendingUp,
-      description: "Automatisation des tâches répétitives"
+      label: "réponses automatiques",
+      icon: MessageCircle,
+      description: "Vos clients reçoivent une réponse instantanée, même à 3h du matin"
     },
     { 
       value: 48, 
-      label: "heures gagnées / mois",
+      label: "heures libérées / mois",
       icon: Clock,
-      description: "Temps libéré pour l'essentiel"
+      description: "Votre équipe se concentre sur ce qui compte vraiment"
     },
     { 
       value: 99, 
-      label: "fiabilité IA",
-      icon: Shield,
-      description: "Précision et performance garanties"
+      label: "précision sur vos docs",
+      icon: FileText,
+      description: "L'IA répond à partir de vos propres documents et FAQ"
     },
   ];
 
@@ -37,10 +37,10 @@ export default function KPIs() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Des résultats <span className="bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] bg-clip-text text-transparent">mesurables</span>
+            Des résultats <span className="bg-gradient-to-r from-[#25D366] to-[#128C7E] bg-clip-text text-transparent">concrets</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            L'impact de l'IA sur votre productivité
+            Ce que l'Assistant WhatsApp IA apporte à votre entreprise
           </p>
         </motion.div>
 
@@ -55,12 +55,12 @@ export default function KPIs() {
               className="relative group"
               data-testid={`kpi-${kpi.label.replace(/\s+/g, '-')}`}
             >
-              <div className="relative p-8 rounded-2xl bg-gradient-to-br from-card to-card/50 border border-border hover:border-[#4F46E5]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[#4F46E5]/10">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#4F46E5]/5 to-[#7C3AED]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative p-8 rounded-2xl bg-gradient-to-br from-card to-card/50 border border-border hover:border-[#25D366]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[#25D366]/10">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#25D366]/5 to-[#128C7E]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
                 <div className="relative">
-                  <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-[#4F46E5]/10 to-[#7C3AED]/10 mb-6">
-                    <kpi.icon className="w-6 h-6 text-[#4F46E5]" />
+                  <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-[#25D366]/10 to-[#128C7E]/10 mb-6">
+                    <kpi.icon className="w-6 h-6 text-[#25D366]" />
                   </div>
                   
                   <div className="mb-4">

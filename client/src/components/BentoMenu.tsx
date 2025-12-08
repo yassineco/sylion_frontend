@@ -1,57 +1,57 @@
 import { motion } from "framer-motion";
-import { Brain, Zap, Target, Shield, Workflow, Database, Users, TrendingUp } from "lucide-react";
+import { BarChart3, Zap, Shield, Workflow, Database, Layers, Rocket } from "lucide-react";
 
 const menuItems = [
   {
     id: 1,
-    title: "Insights",
-    subtitle: "Analytics",
-    description: "Track user behavior",
-    icon: Brain,
+    title: "Analytics",
+    subtitle: "Dashboard",
+    description: "Suivez les conversations, les temps de réponse et la satisfaction client",
+    icon: BarChart3,
     span: "col-span-1 row-span-2",
     gradient: "from-[#4F46E5] to-[#7C3AED]",
   },
   {
     id: 2,
-    title: "Overview",
-    subtitle: "Dashboard",
-    description: "Centralized data view",
-    icon: TrendingUp,
+    title: "CRM",
+    subtitle: "Intégration",
+    description: "Synchronisez avec Salesforce, HubSpot, Zoho...",
+    icon: Layers,
     span: "col-span-1 row-span-1",
     gradient: "from-[#7C3AED] to-[#4F46E5]",
   },
   {
     id: 3,
-    title: "Teamwork",
-    subtitle: "Collaboration",
-    description: "Work together seamlessly",
-    icon: Users,
+    title: "Multi-canal",
+    subtitle: "Connecteurs",
+    description: "WhatsApp, Messenger, Instagram, site web...",
+    icon: Zap,
     span: "col-span-1 row-span-2",
     gradient: "from-[#4F46E5] to-[#06b6d4]",
   },
   {
     id: 4,
-    title: "Efficiency",
-    subtitle: "Automation",
-    description: "Streamline workflows",
+    title: "Workflows",
+    subtitle: "Automatisation",
+    description: "Escalade vers un humain, notifications, actions automatiques",
     icon: Workflow,
     span: "col-span-1 row-span-2",
     gradient: "from-[#7C3AED] to-[#4F46E5]",
   },
   {
     id: 5,
-    title: "Connectivity",
-    subtitle: "Integration",
-    description: "Connect favorite tools",
-    icon: Zap,
+    title: "API",
+    subtitle: "Développeurs",
+    description: "Intégrez l'IA dans vos propres applications",
+    icon: Database,
     span: "col-span-1 row-span-1",
     gradient: "from-[#06b6d4] to-[#4F46E5]",
   },
   {
     id: 6,
-    title: "Protection",
-    subtitle: "Security",
-    description: "Enterprise-grade protection",
+    title: "Sécurité",
+    subtitle: "Conformité",
+    description: "Données hébergées au Maroc, conformité RGPD",
     icon: Shield,
     span: "col-span-1 row-span-1",
     gradient: "from-[#4F46E5] to-[#7C3AED]",
@@ -61,7 +61,6 @@ const menuItems = [
 export default function BentoMenu() {
   return (
     <section className="relative py-24 px-6 bg-[#0B0B0B] overflow-hidden">
-      {/* Background effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#4F46E5]/5 to-transparent" />
       
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -72,11 +71,16 @@ export default function BentoMenu() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#4F46E5]/20 to-[#7C3AED]/20 border border-[#4F46E5]/30 backdrop-blur-sm mb-6">
+            <Rocket className="w-4 h-4 text-[#4F46E5]" />
+            <span className="text-sm font-medium text-gray-300">Pour aller plus loin</span>
+          </div>
+          
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Solutions <span className="bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] bg-clip-text text-transparent">Intelligentes</span>
+            Modules <span className="bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] bg-clip-text text-transparent">avancés</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Des outils puissants pour transformer votre entreprise avec l'IA
+            SYLION n'est pas juste un bot WhatsApp. C'est une plateforme IA évolutive pour votre entreprise.
           </p>
         </motion.div>
 

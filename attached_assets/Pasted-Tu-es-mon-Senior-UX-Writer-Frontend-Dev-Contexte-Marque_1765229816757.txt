@@ -1,0 +1,173 @@
+Tu es mon Senior UX Writer + Frontend Dev.
+
+Contexte :
+- Marque : SYLION TECH
+- Charte graphique actuelle : fond noir, accents violet/bleu néon, style très premium type SaaS international.
+- Objectif : garder **100% du design et de la charte** (layout, couleurs, composants, typographie), mais **réécrire le contenu** pour que le site vende clairement un produit principal :
+  → **L’Assistant WhatsApp IA pour PME au Maroc** (et clients francophones).
+
+Ta mission :
+1. **Ne touches PAS** au design (CSS, animations, layout, composants).
+2. **Réécris et réorganise uniquement les textes** (titres, sous-titres, paragraphes, CTA) sur la page d’accueil pour qu’elle parle :
+   - ~60% de l’Assistant WhatsApp IA
+   - ~30% de RAG / base de connaissances
+   - ~10% de “solutions intelligentes” plus avancées.
+
+Langue & ton :
+- Français, niveau professionnel mais accessible à une PME marocaine.
+- Ton clair, direct, orienté résultat business (moins de jargon IA, plus de bénéfices concrets).
+- Garder le côté premium / sérieux de la marque.
+
+---
+
+### 1. Hero section – Refonte complète du message
+
+Objectif : faire comprendre en 3 secondes que le produit principal est un **Assistant WhatsApp IA 24/7 pour PME**.
+
+À faire :
+- Remplacer le titre principal par quelque chose du type (à améliorer) :
+  **« L’Assistant WhatsApp IA qui répond à vos clients 24h/24 »**
+- Sous-titre : expliquer en 1–2 phrases que :
+  - l’assistant répond automatiquement aux messages WhatsApp,
+  - comprend le métier du client,
+  - réduit la charge des équipes,
+  - fonctionne en FR / AR / Darija / EN.
+- CTA principal : remplacer le texte par un call-to-action orienté action rapide :
+  - Bouton 1 : **« Démarrer en 10 minutes »** (ou « Demander une démo WhatsApp »)
+  - Bouton 2 : **« Voir comment ça marche »** ou **« Découvrir les offres »**
+- En dessous du hero, conserver les 3 stats (92%, 48h, 99%), mais réécrire les labels pour qu’ils soient centrés sur :
+  - Gain de temps / réponses automatiques
+  - Réduction de charge pour l’équipe
+  - Fiabilité de l’IA entraînée sur les documents du client
+
+---
+
+### 2. Section “Pourquoi les PME marocaines utilisent notre WhatsApp IA”
+
+Créer une nouvelle section (ou adapter la section “résultats mesurables / nos solutions”) juste sous le hero, avec un titre du type :
+> **« Pourquoi les PME marocaines choisissent notre Assistant WhatsApp IA »**
+
+Ajouter 4–5 cards avec des cas d’usage concrets, très orientés terrain. Exemple (à reformuler proprement dans le code) :
+
+- **Immobilier**  
+  Répond aux demandes de visite, envoie les fiches des biens, collecte les coordonnées, confirme les rendez-vous.
+
+- **Écoles & formations**  
+  Donne les informations sur les frais, horaires, inscriptions, envoie les documents d’inscription, oriente vers le bon contact.
+
+- **Cliniques & centres médicaux**  
+  Répond aux questions fréquentes, explique les spécialités, oriente les patients, facilite la prise de rendez-vous (sans gérer le diagnostic médical).
+
+- **Restaurants & commerces**  
+  Envoie le menu, l’adresse, les horaires, prend les demandes de réservation ou de commande simple.
+
+- **Agences auto / leasing**  
+  Donne les informations sur les modèles disponibles, les prix, les offres de financement, collecte les leads chauds.
+
+Veiller à ce que chaque card :
+- ait un titre métier clair,
+- une phrase courte de bénéfice,
+- pas de jargon IA.
+
+---
+
+### 3. Section “Un assistant prêt en 10 minutes”
+
+Créer ou adapter une section avec un titre du type :
+> **« Un assistant opérationnel en 10 minutes »**
+
+Ajouter un mini “stepper” en 3 étapes, très simple, par exemple :
+
+1. **Vous choisissez votre numéro WhatsApp**  
+   Numéro existant ou nouveau numéro dédié à l’assistant.
+
+2. **Nous connectons l’assistant à votre activité**  
+   On configure les messages, les horaires, et on ajoute vos documents (FAQ, offres, procédures).
+
+3. **Il répond à vos clients en quelques minutes**  
+   Vos clients écrivent sur WhatsApp, l’IA répond automatiquement 24/7, et vous gardez le contrôle.
+
+Objectif : rassurer sur la simplicité, casser la peur de la complexité technique.
+
+---
+
+### 4. Mise en avant du différenciateur : RAG + multilingue Maroc
+
+Dans une section dédiée (ou en enrichissant une section existante “Des résultats mesurables / IA sur mesure”), mettre clairement en avant :
+
+Titre possible :
+> **« Une IA qui parle vos langues et connaît vos documents »**
+
+Contenu à intégrer :
+
+- L’assistant comprend et mélange :
+  - **Darija**
+  - **Arabe classique**
+  - **Français**
+  - **Anglais**
+- Il s’appuie sur les documents fournis par l’entreprise :
+  - FAQ, procédures internes, fiches produits, catalogues, PDF…
+- Les réponses sont générées via une couche **RAG** (Recherche augmentée par génération) → mais sans trop de jargon, expliquer plutôt :
+  - « L’IA va chercher les réponses dans vos documents avant de répondre. »
+  - « Vous gardez la maîtrise du contenu : ce que l’IA sait vient de vos propres informations. »
+
+Objectif : montrer que ce n’est pas un chatbot générique, mais un assistant **branché sur la connaissance du client**, multilingue, adapté au Maroc.
+
+---
+
+### 5. Réorganisation des sections existantes “Solutions intelligentes”
+
+Conserver la section actuelle “Solutions intelligentes / Insights / Overview / Connectivity / Protection”, mais :
+
+- La déplacer plus bas dans la page (après les sections WhatsApp, cas d’usage PME, RAG+multilingue).
+- Réécrire légèrement les textes pour que ce soit positionné comme :
+  - des **modules avancés** pour clients qui veulent aller plus loin :
+    - Dashboard analytics,
+    - Intégration CRM / ERP,
+    - Connecteurs vers d’autres canaux,
+    - Sécurité & conformité.
+
+L’idée : montrer que SYLION n’est pas “juste un bot WhatsApp”, mais **une plateforme IA évolutive**.
+
+---
+
+### 6. CTA de fin de page
+
+Dans la section finale (actuellement “Prêt à transformer votre entreprise ?”) :
+
+- Rendre le texte plus concret et aligné sur l’Assistant WhatsApp IA.
+  Exemple :
+  > **« Prêt à automatiser votre WhatsApp ? »**  
+  > Rejoignez les entreprises qui répondent déjà 24/7 à leurs clients grâce à l’IA.
+
+- CTA :
+  - **« Contacter SYLION »** ou **« Demander une démo WhatsApp »**
+  - Secondaire : **« Voir les tarifs »**
+
+---
+
+### 7. Détails techniques pour toi (Replit) :
+
+1. Parcours tous les fichiers de la page d’accueil (par exemple `index.html`, `Home.tsx`, `Home.vue` ou équivalent).
+2. **Ne modifie que les textes** :
+   - Titres (h1, h2, h3…)
+   - Paragraphes
+   - Texte des boutons
+   - Légendes / descriptions
+3. Ne touche pas :
+   - Aux classes CSS / Tailwind
+   - Aux composants React / Vue / Svelte
+   - Aux images / logos / couleurs / gradients
+4. Fournis le code final mis à jour, avec :
+   - Les nouvelles chaînes de texte déjà intégrées,
+   - Aucun commentaire superflu,
+   - Une structure identique pour que je puisse copier-coller les fichiers dans mon projet.
+
+À la fin, résume-moi brièvement :
+- quelles sections tu as modifiées,
+- où se trouve le texte principal du hero,
+- où se trouvent les nouvelles sections “PME Maroc”, “10 minutes”, “RAG + multilingue”.
+
+Ton objectif final :  
+**Faire de cette landing page un site qui garde l’esthétique premium actuelle mais qui, en termes de contenu, vend clairement :  
+« SYLION – L’Assistant WhatsApp IA pour les PME ».**

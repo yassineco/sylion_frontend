@@ -1,10 +1,9 @@
-import ShinyText from "./animations/ShinyText";
 import { Button } from "./ui/button";
 import LightRays from "./backgrounds/LightRays";
 import GridPattern from "./backgrounds/GridPattern";
 import FloatingOrbs from "./backgrounds/FloatingOrbs";
 import { motion } from "framer-motion";
-import { Sparkles, Zap, Brain } from "lucide-react";
+import { MessageCircle, Play, Clock, Users, CheckCircle } from "lucide-react";
 import logoUrl from "@assets/sylion-logo.png";
 
 export default function Hero() {
@@ -21,9 +20,9 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="mb-6"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#4F46E5]/20 to-[#7C3AED]/20 border border-[#4F46E5]/30 backdrop-blur-sm mb-8">
-            <Sparkles className="w-4 h-4 text-[#4F46E5]" />
-            <span className="text-sm font-medium text-gray-300">L'avenir de l'IA en entreprise</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#25D366]/20 to-[#128C7E]/20 border border-[#25D366]/30 backdrop-blur-sm mb-8">
+            <MessageCircle className="w-4 h-4 text-[#25D366]" />
+            <span className="text-sm font-medium text-gray-300">Assistant WhatsApp IA pour PME</span>
           </div>
         </motion.div>
 
@@ -38,17 +37,15 @@ export default function Hero() {
           }}
           className="relative mb-8"
         >
-          {/* Glow effect background */}
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse" />
           </div>
           
-          {/* Logo avec effets */}
           <div className="relative">
             <motion.img 
               src={logoUrl} 
               alt="SYLION TECH" 
-              className="h-48 md:h-64 w-auto mx-auto relative z-10"
+              className="h-32 md:h-40 w-auto mx-auto relative z-10 mb-6"
               style={{
                 filter: "drop-shadow(0 0 40px rgba(34, 211, 238, 0.6)) drop-shadow(0 0 80px rgba(34, 211, 238, 0.3))",
               }}
@@ -68,15 +65,28 @@ export default function Hero() {
           </div>
         </motion.div>
 
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
+        >
+          L'Assistant WhatsApp IA qui répond{" "}
+          <span className="bg-gradient-to-r from-[#25D366] to-[#128C7E] bg-clip-text text-transparent">
+            24h/24
+          </span>
+          {" "}à vos clients
+        </motion.h1>
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto text-gray-300 leading-relaxed"
         >
-          L'intelligence artificielle qui comprend votre métier.
-          <br />
-          Des assistants IA intégrés pour transformer votre entreprise.
+          Répondez automatiquement aux messages WhatsApp de vos clients. 
+          L'IA comprend votre métier, parle Français, Arabe, Darija et Anglais, 
+          et libère votre équipe des tâches répétitives.
         </motion.p>
 
         <motion.div
@@ -88,22 +98,22 @@ export default function Hero() {
           <a href="#contact" data-testid="link-demo">
             <Button 
               size="lg" 
-              className="rounded-full bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] text-white hover:opacity-90 transition-all hover:scale-105 px-8 py-7 text-lg shadow-lg shadow-[#4F46E5]/50"
+              className="rounded-full bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white hover:opacity-90 transition-all hover:scale-105 px-8 py-7 text-lg shadow-lg shadow-[#25D366]/50"
               data-testid="button-demo"
             >
-              <Zap className="w-5 h-5 mr-2" />
-              Demander une démo
+              <MessageCircle className="w-5 h-5 mr-2" />
+              Démarrer en 10 minutes
             </Button>
           </a>
-          <a href="/products" data-testid="link-discover">
+          <a href="#how-it-works" data-testid="link-discover">
             <Button 
               size="lg" 
               variant="outline"
               className="rounded-full border-2 border-white/20 bg-white/5 backdrop-blur-sm text-white hover:bg-white/10 transition-all hover:scale-105 px-8 py-7 text-lg"
               data-testid="button-discover"
             >
-              <Brain className="w-5 h-5 mr-2" />
-              Découvrir nos solutions
+              <Play className="w-5 h-5 mr-2" />
+              Voir comment ça marche
             </Button>
           </a>
         </motion.div>
@@ -115,16 +125,25 @@ export default function Hero() {
           className="grid grid-cols-3 gap-8 max-w-2xl mx-auto"
         >
           <div className="text-center">
-            <div className="text-3xl font-bold text-white mb-1">92%</div>
-            <div className="text-sm text-gray-400">Gain de productivité</div>
+            <div className="flex items-center justify-center mb-2">
+              <Clock className="w-5 h-5 text-[#25D366] mr-2" />
+              <span className="text-3xl font-bold text-white">92%</span>
+            </div>
+            <div className="text-sm text-gray-400">Réponses automatisées</div>
           </div>
           <div className="text-center border-x border-white/10">
-            <div className="text-3xl font-bold text-white mb-1">48h</div>
-            <div className="text-sm text-gray-400">Gagnées par mois</div>
+            <div className="flex items-center justify-center mb-2">
+              <Users className="w-5 h-5 text-[#25D366] mr-2" />
+              <span className="text-3xl font-bold text-white">48h</span>
+            </div>
+            <div className="text-sm text-gray-400">Libérées par mois</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-white mb-1">99%</div>
-            <div className="text-sm text-gray-400">Fiabilité IA</div>
+            <div className="flex items-center justify-center mb-2">
+              <CheckCircle className="w-5 h-5 text-[#25D366] mr-2" />
+              <span className="text-3xl font-bold text-white">99%</span>
+            </div>
+            <div className="text-sm text-gray-400">Précision sur vos docs</div>
           </div>
         </motion.div>
       </div>
