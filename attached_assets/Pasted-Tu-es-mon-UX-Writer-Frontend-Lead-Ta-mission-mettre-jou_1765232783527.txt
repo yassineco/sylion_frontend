@@ -1,0 +1,59 @@
+Tu es mon UX Writer + Frontend Lead.  
+Ta mission : mettre à jour la page Tarifs de SylionAI pour qu’elle corresponde à notre nouveau modèle économique.
+
+Règles impératives :
+- NE change PAS le design (classes CSS, layout, couleurs).
+- Mets à jour UNIQUEMENT les textes.
+- Garde le style premium, professionnel et cohérent avec le reste du site.
+- Les numéros WhatsApp NE SONT PAS inclus : ajouter une note claire.
+- Le client paie ses frais WhatsApp / 360dialog directement (comme WATI/Respond.io).
+
+Voici les NOUVEAUX TARIFS OFFICIELS à intégrer :
+
+=====================================================
+🚀 NOUVEAU PRICING SYLIONAI (2025)
+
+### ⭐ Plan Starter — 590 DH / mois
+Pour petites équipes ou indépendants souhaitant automatiser leur WhatsApp.
+- Assistant WhatsApp IA 24/7
+- Jusqu’à 500 conversations / mois
+- Base documentaire simple
+- Multilingue FR / AR / Darija / EN
+- Support email
+CTA : « Demander une démo »
+
+### ⭐⭐ Plan Business (RECOMMANDÉ) — 990 DH / mois
+Pour PME souhaitant une IA complète et une automatisation avancée.
+- Assistants multiples
+- Conversations illimitées
+- Base RAG avancée
+- Support prioritaire FR / Darija
+- Intégration CRM
+- Analytics détaillés
+- Workflows automatisés
+CTA : « Demander une démo »
+
+### ⭐⭐⭐ Plan Pro / Entreprise — à partir de 2 500 DH / mois (sur devis)
+Pour écoles, cliniques, agences auto, centres de formation, grandes PME.
+- Nombre d’assistants illimité
+- Hébergement dédié Maroc ou Europe
+- SLA garanti
+- Account manager dédié
+- Formation sur site
+- API & intégrations personnalisées
+CTA : « Demander un devis »
+
+=====================================================
+
+Ajoute en bas de la section la note suivante :
+
+💬 **Note importante :**  
+Les coûts WhatsApp (numéros, frais 360dialog/Meta, conversations) sont facturés directement par le fournisseur WhatsApp Business et restent à la charge du client.  
+SylionAI facture uniquement l’intelligence, l’automatisation et le support.
+
+=====================================================
+
+Livrables attendus :
+1. Le code HTML/JSX/TSX final de la section Tarifs avec les textes mis à jour.
+2. Un texte propre, cohérent, sans modifier le style visuel.
+3. Pas de commentaires superflus.

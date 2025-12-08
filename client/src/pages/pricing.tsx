@@ -5,42 +5,50 @@ import { Check } from "lucide-react";
 export default function PricingPage() {
   const plans = [
     {
-      name: "PME Starter",
-      price: "990 DH",
+      name: "Starter",
+      price: "590 DH",
       period: "/mois",
+      description: "Pour petites équipes ou indépendants souhaitant automatiser leur WhatsApp.",
       features: [
-        "1 numéro WhatsApp",
+        "Assistant WhatsApp IA 24/7",
         "Jusqu'à 500 conversations/mois",
+        "Base documentaire simple",
         "Multilingue FR/AR/Darija/EN",
         "Support email",
       ],
+      cta: "Demander une démo",
     },
     {
       name: "Business",
-      price: "2 490 DH",
+      price: "990 DH",
       period: "/mois",
+      description: "Pour PME souhaitant une IA complète et une automatisation avancée.",
       features: [
-        "Jusqu'à 3 numéros WhatsApp",
+        "Assistants multiples",
         "Conversations illimitées",
         "Base RAG avancée",
         "Support prioritaire FR/Darija",
         "Intégration CRM",
         "Analytics détaillés",
+        "Workflows automatisés",
       ],
       popular: true,
+      cta: "Demander une démo",
     },
     {
       name: "Pro / Entreprise",
-      price: "Sur devis",
-      period: "",
+      price: "À partir de 2 500 DH",
+      period: "/mois",
+      description: "Pour écoles, cliniques, agences auto, centres de formation, grandes PME.",
       features: [
-        "Numéros illimités",
-        "Hébergement dédié Maroc",
+        "Nombre d'assistants illimité",
+        "Hébergement dédié Maroc ou Europe",
         "SLA garanti",
         "Account manager dédié",
         "Formation sur site",
-        "API et développements",
+        "API et intégrations personnalisées",
       ],
+      cta: "Demander un devis",
     },
   ];
 
@@ -77,10 +85,11 @@ export default function PricingPage() {
                 </span>
               )}
               <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-              <div className="mb-6">
+              <div className="mb-4">
                 <span className="text-4xl font-bold">{plan.price}</span>
                 <span className="text-muted-foreground">{plan.period}</span>
               </div>
+              <p className="text-sm text-muted-foreground mb-6">{plan.description}</p>
               <ul className="space-y-3 mb-8">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-2">
@@ -98,10 +107,15 @@ export default function PricingPage() {
                 variant={plan.popular ? "default" : "outline"}
                 data-testid={`button-select-${plan.name.toLowerCase()}`}
               >
-                Demander une démo
+                {plan.cta}
               </Button>
             </div>
           ))}
+        </div>
+        <div className="mt-16 p-6 rounded-2xl border border-border">
+          <p className="text-sm text-muted-foreground">
+            <span className="font-semibold">Note importante :</span> Les coûts WhatsApp (numéros, frais 360dialog/Meta, conversations) sont facturés directement par le fournisseur WhatsApp Business et restent à la charge du client. SylionAI facture uniquement l'intelligence, l'automatisation et le support.
+          </p>
         </div>
       </div>
     </main>
