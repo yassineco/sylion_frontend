@@ -1,0 +1,117 @@
+Tu es mon Lead Frontend + UX Designer pour le site SylionAI.
+
+🎯 Objectif :
+Mettre à jour la page **Tarifs** avec la nouvelle grille de prix SylionAI, en gardant le style premium existant (fond sombre, accents néon, style SaaS “Silicon Valley”) et en améliorant la présentation graphique : cartes pricing, séparateurs, badges, mise en avant du plan Business.
+
+⚠ Règles importantes :
+- Ne change PAS la charte graphique globale (couleurs principales, typographie, ambiance).
+- Utilise le système existant : Tailwind / CSS / composants selon le projet actuel.
+- Tu peux améliorer la mise en page des tarifs (cards, bordures, badges, icônes) mais sans casser la structure générale du site.
+- NE promets PAS de fonctionnalités qui n’existent pas encore dans le backend (ex : intégration CRM incluse, account manager, etc.).
+- Les add-ons (CRM, multi-canal, workflows) doivent être présentés comme **options possibles**, pas comme inclus.
+
+---
+
+## 1. Nouveau contenu à intégrer (texte officiel)
+
+Nous avons 3 offres :
+
+### 🟣 PME Starter — 590 DH / mois
+Pour les petites structures qui veulent commencer avec un assistant WhatsApp IA simple et efficace.
+
+- 1 numéro WhatsApp géré par l’assistant  
+- Jusqu’à 500 conversations / mois  
+- Assistant IA 24/7  
+- Multilingue FR / AR / Darija / EN  
+- Base de connaissance simple (RAG basique sur quelques documents)  
+- Support email  
+
+CTA : **“Demander une démo”**
+
+---
+
+### 🔵 Business — 990 DH / mois  *(Plan recommandé)*
+Pour les PME qui veulent automatiser sérieusement leur WhatsApp et suivre la performance.
+
+- Jusqu’à 3 numéros WhatsApp gérés par l’assistant  
+- Conversations illimitées (sous réserve des limites WhatsApp/360dialog du client)  
+- Base de connaissance avancée (RAG sur plusieurs documents)  
+- Support prioritaire (FR / Darija)  
+- Analytics simplifiés (volume de conversations, activité IA, etc.)  
+- **Add-ons possibles (sur devis) :** CRM, multi-canal, workflows avancés  
+
+Badge : **“Plan le plus choisi”** ou **“Recommandé”**
+
+CTA : **“Demander une démo”**
+
+---
+
+### 🟡 Entreprise — à partir de 2 500 DH / mois (sur devis)
+Pour écoles, cliniques, agences auto, groupes et grandes PME.
+
+- Nombre de numéros WhatsApp gérés : illimité (selon architecture client)  
+- Hébergement dédié (Maroc ou Europe selon besoin)  
+- SLA prioritaire  
+- Support dédié (FR / Darija)  
+- Configuration avancée & formation des équipes  
+- API & modules avancés  
+- Développements sur mesure (intégrations spécifiques, workflows complexes, etc.)
+
+CTA : **“Demander un devis”**
+
+---
+
+### Note importante (à afficher en bas de section dans un bloc bien visible) :
+
+> 💬 **Note :**  
+> Les coûts WhatsApp Business (360dialog, Meta, numéros et conversations) sont facturés directement par le fournisseur WhatsApp et restent à la charge du client.  
+> SylionAI facture uniquement l’intelligence, l’automatisation et le support.
+
+---
+
+## 2. Amélioration graphique demandée
+
+Je veux que la section Tarifs ressemble à une section pricing de SaaS premium (type Vercel / Linear / Notion) :
+
+- 3 **cards** bien distinctes pour chaque offre (Starter, Business, Entreprise).
+- Fond sombre global, cards légèrement plus claires avec bordures ou glow léger.
+- Utilise des séparateurs subtils (lignes, spacing, légères bordures).
+- Ajouter :
+  - un **badge “Recommandé”** sur la carte Business,
+  - un léger effet de surbrillance (shadow, border, scale) au hover sur chaque card,
+  - des étiquettes de type : `Starter`, `Business`, `Entreprise`.
+- Prix mis en évidence visuellement (gros texte “590 DH / mois” etc.).
+- Afficher clairement “/ mois” et “à partir de 2 500 DH / mois” pour Entreprise.
+- Sous les cartes, mettre la note sur les coûts WhatsApp dans un bloc distinct (par ex. un encadré avec une icône 💬 ou ℹ).
+
+Tu peux :
+- utiliser des classes utilitaires (ex : Tailwind) pour : `rounded-xl`, `border`, `shadow`, `bg-gradient-to-r`, etc.
+- maintenir l’harmonie avec les autres sections (pas de nouvelle palette fluo agressive).
+
+---
+
+## 3. Contrainte de cohérence produit
+
+- Ne mentionne pas “intégration CRM incluse” dans une offre → seulement “Add-ons possibles (sur devis)”.
+- Ne mentionne pas “Account Manager” ou des éléments non prévus dans le backend actuel.
+- Si tu veux faire des tooltips / petites mentions, elles doivent rester génériques et vraies.
+
+---
+
+## 4. Livrable attendu
+
+1. Le code complet de la section Tarifs mise à jour (JSX/TSX/HTML selon le projet) :
+   - conteneur de section,
+   - 3 cards de pricing,
+   - badges,
+   - prix,
+   - listes de features,
+   - CTA,
+   - note en bas.
+
+2. Le code doit être prêt à être copié-collé dans le composant/page qui gère la section Tarifs (ex : `PricingSection`, `Pricing`, ou `pages/pricing.tsx` selon la structure actuelle).
+
+3. Utiliser des classes utilitaires cohérentes avec ce qui existe déjà dans le projet (si tu vois déjà une section type “cards” ou “features”, aligne-toi dessus).
+
+Ton objectif :
+👉 Transformer la section Tarifs actuelle en **section pricing premium, claire, alignée avec les nouveaux prix et crédible pour des PME marocaines**, sans casser la charte existante.
