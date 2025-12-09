@@ -429,8 +429,8 @@ export default function WhatsappBusinessApiMarocPage() {
                 <p className="text-sm text-gray-400">Jusqu'à 3 numéros, RAG avancée, support prioritaire.</p>
               </div>
               <div className="p-6 rounded-2xl border border-gray-800 bg-[#111111]">
-                <h3 className="text-lg font-bold text-white mb-2">Entreprise</h3>
-                <p className="text-2xl font-bold text-[#F59E0B] mb-2">À partir de 2 500 DH<span className="text-sm text-gray-400">/mois</span></p>
+                <h3 className="text-lg font-bold text-white mb-2">Enterprise</h3>
+                <p className="text-2xl font-bold text-[#F59E0B] mb-2">Sur devis</p>
                 <p className="text-sm text-gray-400">Pour écoles, cliniques, agences auto, grands comptes.</p>
               </div>
             </div>

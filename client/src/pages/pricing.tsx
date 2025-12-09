@@ -40,18 +40,18 @@ export default function PricingPage() {
       color: "#4F46E5",
     },
     {
-      name: "Entreprise",
-      tag: "Entreprise",
-      price: "À partir de 2 500 DH",
-      period: "/mois (sur devis)",
+      name: "Enterprise",
+      tag: "Enterprise",
+      price: "Sur devis",
+      period: "",
+      periodSubtext: "Facturation mensuelle adaptée à vos volumes et intégrations.",
       description: "Pour écoles, cliniques, agences auto, groupes et grandes PME.",
       features: [
         "Nombre de numéros WhatsApp illimité",
         "Hébergement dédié Maroc ou Europe",
-        "SLA prioritaire",
-        "Support dédié FR/Darija",
+        "SLA prioritaire et support dédié FR/Darija",
         "Configuration avancée et formation équipes",
-        "API et modules avancés",
+        "API et modules avancés (CRM, multi-canal, workflows)",
         "Développements sur mesure",
       ],
       cta: "Demander un devis",
@@ -111,7 +111,10 @@ export default function PricingPage() {
 
               <div className="mb-6 pb-6 border-b border-gray-800">
                 <span className="text-4xl font-bold">{plan.price}</span>
-                <span className="text-gray-400 text-sm ml-1">{plan.period}</span>
+                {plan.period && <span className="text-gray-400 text-sm ml-1">{plan.period}</span>}
+                {plan.periodSubtext && (
+                  <p className="text-xs text-gray-500 mt-2">{plan.periodSubtext}</p>
+                )}
               </div>
 
               <ul className="space-y-3 mb-8">
