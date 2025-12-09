@@ -311,9 +311,9 @@ export default function AssistantWhatsAppMarocPage() {
               </div>
               <div className="p-6 rounded-2xl border border-gray-800 bg-[#111111] text-center">
                 <p className="text-4xl font-bold bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] bg-clip-text text-transparent mb-2">
-                  48h
+                  48%
                 </p>
-                <p className="text-gray-400 text-sm">libérées par mois par conseiller en moyenne</p>
+                <p className="text-gray-400 text-sm">Réduction moyenne du temps de traitement</p>
               </div>
               <div className="p-6 rounded-2xl border border-gray-800 bg-[#111111] text-center">
                 <p className="text-4xl font-bold bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] bg-clip-text text-transparent mb-2">

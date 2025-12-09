@@ -137,9 +137,9 @@ export default function Hero() {
           <div className="text-center py-4 sm:py-0 border-y sm:border-y-0 sm:border-x border-white/10">
             <div className="flex items-center justify-center mb-2">
               <Users className="w-5 h-5 text-[#25D366] mr-2" />
-              <span className="text-2xl sm:text-3xl font-bold text-white">48h</span>
+              <span className="text-2xl sm:text-3xl font-bold text-white">48%</span>
             </div>
-            <div className="text-sm text-gray-400">Libérées par mois</div>
+            <div className="text-sm text-gray-400">Temps traitement réduit</div>
           </div>
           <div className="text-center py-4 sm:py-0">
             <div className="flex items-center justify-center mb-2">
