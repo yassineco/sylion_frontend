@@ -1,0 +1,288 @@
+Tu es l’IA de Replit sur le site marketing dark/premium de SYLION – Assistant WhatsApp IA.
+Le site contient déjà : Home, Produits, Services, Tarifs, Assistant WhatsApp, WhatsApp API Maroc, Enterprise, Intégration CRM.
+
+🎯 Objectif de cette tâche :
+Créer une page dédiée à l’architecture technique et à la sécurité de la plateforme SYLION, pour rassurer les DSI, responsables IT, RSSI et décideurs grands comptes.
+
+Nom de la page :
+
+App Router : src/app/architecture-securite/page.tsx
+
+Sinon : src/pages/ArchitectureSecurite.tsx
+
+Ajouter dans la navigation (ou sous “Enterprise”) un lien :
+“Architecture & Sécurité” → cette page.
+
+1. SEO & Meta
+
+Meta title :
+Architecture & Sécurité – Plateforme WhatsApp IA SYLION (Enterprise grade)
+
+Meta description :
+Découvrez l’architecture multi-tenant, la sécurité, le chiffrement, l’hébergement et la scalabilité de la plateforme WhatsApp IA SYLION, conçue pour les PME et grands comptes marocains.
+
+2. Structure de la page & contenu
+H1 – Hero
+
+Architecture & Sécurité de la plateforme SYLION
+
+Sous-texte :
+
+Une plateforme WhatsApp IA conçue dès le départ pour les organisations exigeantes : architecture multi-tenant, Workers + Queue, hébergement dédié Maroc/Europe, chiffrement des données et gouvernance claire entre vos équipes et SYLION.
+
+Badges possibles : Multi-tenant, Enterprise grade, Scalable
+
+Deux boutons :
+
+Parler à un expert technique → /contact
+
+Voir l’offre Enterprise → /enterprise
+
+H2 – Vue d’ensemble de l’architecture SYLION
+
+Paragraphe :
+
+SYLION repose sur une architecture moderne composée de plusieurs couches indépendantes : passerelle WhatsApp, moteur IA, base de connaissances (RAG), file de messages (queue) et Workers de traitement.
+
+Cette séparation permet de gérer un grand volume de conversations, d’isoler les données de chaque client et d’évoluer sans interrompre le service.
+
+Ajoute un schéma textuel (4 blocs horizontaux) :
+
+Clients WhatsApp
+
+Gateway WhatsApp (Webhook + Normalisation)
+
+Queue & Workers IA (traitement asynchrone)
+
+Services internes :
+
+RAG / base de connaissances
+
+Intégrations CRM
+
+Stockage des logs
+
+Outils d’admin & monitoring
+
+H2 – Multi-tenant & isolation par client
+
+Bloc explicatif :
+
+Chaque client dispose de :
+
+ses propres identifiants WhatsApp API (360dialog / Meta),
+
+sa propre base de connaissances (documents, FAQ, catalogues),
+
+sa propre configuration d’intentions & workflows,
+
+sa propre configuration d’intégrations (CRM, outils internes).
+
+Met en avant :
+
+Aucun mélange de données entre clients : les documents et les logs sont isolés par tenant.
+
+H2 – Scalabilité : Queue + Workers
+
+Texte :
+
+SYLION utilise une architecture Queue + Workers pour traiter les messages.
+Plutôt que de répondre directement dans le webhook, les messages sont placés dans une file, puis traités par des Workers capables de monter en charge.
+
+Liste :
+
+Absorption des pics de charge (campagnes, promos, heures de pointe)
+
+Possibilité de scaler horizontalement le nombre de Workers
+
+Temps de réponse stable, même en forte activité
+
+Gestion des erreurs et des retries (messages rejoués en cas d’échec temporaire)
+
+H2 – Hébergement & données
+
+Deux sous-blocs :
+
+H3 – Localisation des données
+
+Hébergement au choix :
+
+Maroc (pour proximité et contraintes locales)
+
+ou Europe (pour clients sensibles à la conformité UE).
+
+H3 – Types de données stockées
+
+Liste claire :
+
+Contenu des messages WhatsApp (selon besoin métier)
+
+Métadonnées de conversation (ID conversation, timestamps, état)
+
+Documents de la base de connaissances (FAQ, PDF, catalogues, procédures)
+
+Logs techniques (erreurs, temps de réponse, intégration CRM)
+
+Mention :
+
+Les accès à ces données sont strictement contrôlés, journalisés, et limités selon les rôles (Support SYLION, Admin client, etc.).
+
+H2 – Chiffrement & sécurité des accès
+
+Points à inclure :
+
+Communication chiffrée (HTTPS/TLS) entre :
+
+SYLION ↔ WhatsApp API provider
+
+SYLION ↔ CRM / systèmes internes
+
+SYLION ↔ interface d’admin
+
+Secrets & clés API stockés de manière sécurisée (vault / store chiffré)
+
+Rotation possible des clés (WhatsApp API, CRM, etc.)
+
+Principes de moindre privilège : les services n’ont accès qu’aux ressources nécessaires.
+
+Ajoute un encadré :
+
+SYLION ne demande jamais des accès “admin global” à vos systèmes internes si ce n’est pas nécessaire.
+Les intégrations sont conçues selon le principe du périmètre minimal.
+
+H2 – Gouvernance & responsabilités (qui fait quoi ?)
+
+Tableau 2 colonnes :
+
+Colonne 1 : SYLION
+Colonne 2 : Client
+
+Lignes :
+
+Exploitation de la plateforme
+
+SYLION : mise à jour, patches, monitoring.
+
+Client : validation des nouveautés, règles métiers.
+
+Sécurité de la plateforme
+
+SYLION : sécurisation infra, contrôle accès interne, logs.
+
+Client : sécurité de son réseau, de ses postes et de ses comptes utilisateurs.
+
+Données métier (FAQ, PDF, offres, procédures)
+
+SYLION : stockage et traitement.
+
+Client : contenu, exactitude et droits sur ces données.
+
+Intégrations CRM / systèmes internes
+
+SYLION : implémentation technique et respect du périmètre d’accès.
+
+Client : gestion des comptes API, des rôles et des droits dans ses outils.
+
+H2 – Logs, monitoring & alertes
+
+Texte :
+
+La plateforme SYLION est conçue pour être observable : chaque brique émet des métriques et des logs.
+
+Liste :
+
+Logs d’erreurs et de performance
+
+Suivi du volume de messages par tenant
+
+Monitoring des temps de réponse
+
+Alerte en cas de dépassement de seuil (erreurs, temps de traitement, intégrations CRM en panne…)
+
+Possibilité de fournir des exports ou accès en lecture à vos équipes IT (selon contrat)
+
+H2 – Conformité & bonnes pratiques
+
+Liste :
+
+Séparation des environnements (dev / test / prod)
+
+Possibilité d’utiliser un environnement de pré-production pour vos tests (cas Enterprise)
+
+Sauvegardes régulières et plan de reprise en cas d’incident (selon SLA)
+
+Respect des principes proches du RGPD :
+
+minimisation des données collectées,
+
+possibilité de suppression de conversations à la demande,
+
+accès limité aux personnes autorisées.
+
+Précise :
+
+SYLION peut adapter certaines politiques de conservation de données selon les exigences contractuelles des grands comptes.
+
+H2 – WhatsApp Business API & fournisseur (360dialog / Meta)
+
+Bloc explicatif :
+
+SYLION ne remplace pas la WhatsApp Business API, il s’y connecte.
+La brique “transport” des messages (numéros, canaux, conformité WhatsApp) est assurée par un fournisseur agréé (ex : 360dialog / Meta).
+
+Liste :
+
+Le client conserve la propriété de ses numéros WhatsApp.
+
+Les coûts de conversations WhatsApp sont facturés directement par le fournisseur au client.
+
+SYLION facture uniquement :
+
+l’intelligence (IA),
+
+l’automatisation,
+
+le support et les intégrations.
+
+H2 – FAQ Architecture & Sécurité
+
+Créer une section FAQ en accordéon + schema.org FAQPage avec au moins :
+
+Pouvez-vous héberger la plateforme au Maroc ?
+
+Nos données sont-elles mélangées avec celles d’autres clients ?
+
+Qui a accès aux conversations de nos clients ?
+
+Comment gérez-vous les accès aux CRM / systèmes internes ?
+
+Proposez-vous un environnement de test avant la production ?
+
+Réponses cohérentes avec tout ce qui précède.
+
+H2 – CTA final
+
+Texte :
+
+Vous avez des exigences fortes en matière de sécurité, de conformité ou d’architecture ?
+Discutons directement avec vos équipes IT / DSI pour cadrer le périmètre technique et les garanties nécessaires.
+
+Boutons :
+
+Parler à un expert technique → /contact
+
+Voir l’offre Enterprise → /enterprise
+
+3. Technique & cohérence
+
+Réutilise le style dark premium, les mêmes composants que les pages Enterprise & Intégration CRM.
+
+Ajoute un maillage interne en bas de page vers :
+
+/enterprise
+
+/integration-crm-workflows
+
+/whatsapp-business-api-maroc
+
+Ne casse pas la navigation existante.

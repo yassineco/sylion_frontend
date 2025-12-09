@@ -13,6 +13,7 @@ import WhatsappBusinessApiMarocPage from "@/pages/whatsapp-business-api-maroc";
 import AssistantWhatsAppMarocPage from "@/pages/assistant-whatsapp-maroc";
 import EnterprisePage from "@/pages/enterprise";
 import IntegrationCrmWorkflowsPage from "@/pages/integration-crm-workflows";
+import ArchitectureSecuritePage from "@/pages/architecture-securite";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -27,6 +28,7 @@ function Router() {
       <Route path="/assistant-whatsapp-maroc" component={AssistantWhatsAppMarocPage} />
       <Route path="/enterprise" component={EnterprisePage} />
       <Route path="/integration-crm-workflows" component={IntegrationCrmWorkflowsPage} />
+      <Route path="/architecture-securite" component={ArchitectureSecuritePage} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -11,7 +11,7 @@ export default function Navigation() {
     { href: "/services", label: "Services" },
     { href: "/pricing", label: "Tarifs" },
     { href: "/enterprise", label: "Enterprise" },
-    { href: "/integration-crm-workflows", label: "Intégration CRM" },
+    { href: "/architecture-securite", label: "Architecture & Sécurité" },
     { href: "/contact", label: "Contact" },
   ];
 
