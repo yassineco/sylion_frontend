@@ -1,0 +1,235 @@
+Tu es l’IA de Replit sur un site marketing dark/premium pour SYLION – Assistant WhatsApp IA.
+Le site contient déjà : Home, Produits, Services, Tarifs, Assistant WhatsApp, WhatsApp API Maroc, Enterprise.
+
+🎯 Objectif :
+Créer une nouvelle page dédiée à l’intégration de l’Assistant WhatsApp IA avec les CRM et aux workflows IA.
+
+Nom de la page :
+
+Next.js App Router : src/app/integration-crm-workflows/page.tsx
+
+Sinon : src/pages/IntegrationCrmWorkflows.tsx
+
+Ajoute aussi un lien “Intégration CRM” dans le menu (ou sous Produits/Services).
+
+1. SEO & Meta
+
+Meta title :
+Intégration WhatsApp IA & CRM – Workflows automatisés pour PME et grands comptes
+
+Meta description :
+Connectez WhatsApp IA à votre CRM (HubSpot, Salesforce, Odoo, Dynamics) et automatisez vos workflows : qualification leads, suivi clients, notifications, tâches commerciales.
+
+2. Structure de la page & contenu
+H1 – Hero
+
+Intégration WhatsApp IA & CRM – Workflows automatisés
+
+Sous-texte :
+
+Connectez votre Assistant WhatsApp IA SYLION à votre CRM (HubSpot, Salesforce, Odoo, Dynamics…) et automatisez la qualification des leads, le suivi client et les tâches commerciales.
+Une seule plateforme pour centraliser vos conversations, vos données et vos actions.
+
+Boutons :
+
+Parler à un expert CRM → /contact
+
+Tester l’assistant sur WhatsApp → lien démo
+
+Badge : Intégration & Workflows IA
+
+H2 – Pourquoi connecter WhatsApp IA à votre CRM ?
+
+Paragraphe :
+
+WhatsApp concentre aujourd’hui une grande partie des demandes clients, mais ces échanges restent souvent “perdus” dans un téléphone ou une boîte partagée.
+
+En connectant votre Assistant WhatsApp IA à votre CRM, vous :
+
+Liste :
+
+centralisez toutes les conversations dans un même outil,
+
+créez automatiquement des fiches contacts et opportunités,
+
+suivez les leads du premier message jusqu’à la vente,
+
+pilotez votre activité avec des données fiables,
+
+déclenchez des campagnes, relances et tâches automatiquement.
+
+H2 – CRM supportés & intégrations possibles
+
+Affiche des cartes pour :
+
+HubSpot
+
+Création de contacts, deals, tickets support, ajout de notes depuis les conversations WhatsApp.
+
+Salesforce
+
+Création de leads/opportunités, logs d’interactions, synchronisation champs personnalisés.
+
+Odoo
+
+Intégration commerciale et support, création de clients, devis, tickets.
+
+Dynamics 365 / Autres CRM
+
+Intégrations via API, webhooks et connecteurs sur mesure.
+
+Ajoute un bloc texte :
+
+SYLION s’intègre également avec des CRM internes et des outils maison via API REST, webhooks ou middlewares (n8n, Make, Zapier, etc.).
+
+H2 – Exemples de Workflows IA concrets
+
+Présente ça en 4 blocs :
+
+Qualification automatique des leads
+
+L’Assistant IA pose les bonnes questions (budget, besoin, timing) puis crée un lead qualifié dans le CRM.
+
+Rappels & relances automatiques
+
+Après une demande WhatsApp, le CRM crée une tâche ou envoie un reminder si le commercial n’a pas répondu.
+
+Support & tickets
+
+L’IA identifie un problème récurrent → création d’un ticket support dans le CRM / helpdesk avec résumé de la conversation.
+
+Parcours client multi-étapes
+
+De la première question WhatsApp jusqu’à la signature, les étapes sont tracées dans le CRM sans saisie manuelle.
+
+H2 – Architecture d’intégration (vue simple)
+
+Ajoute un schéma textuel expliqué :
+
+Bloc 1 : Client sur WhatsApp
+
+Bloc 2 : Assistant IA SYLION (WhatsApp API + RAG)
+
+Bloc 3 : Connecteur d’intégration (webhooks/API)
+
+Bloc 4 : CRM (HubSpot / Salesforce / Odoo / autre)
+
+Texte :
+
+À chaque événement important (nouvelle conversation, lead qualifié, mot-clé spécifique, demande de rappel…), SYLION envoie les données au CRM avec le bon format : contact, ticket, lead, note, tâche, etc.
+
+H2 – Sécurité & gouvernance des données
+
+Points à inclure :
+
+Données WhatsApp et CRM synchronisées de manière chiffrée
+
+Aucun stockage inutile : uniquement les champs nécessaires
+
+Respect des droits d’accès définis côté CRM
+
+Logs et traçabilité des synchronisations
+
+Possibilité de travailler en environnements de test (sandbox CRM) avant la prod
+
+H2 – Pour qui est cette intégration ?
+
+Grille de segments :
+
+Équipes commerciales B2B / B2C
+
+SAV & support client
+
+Centres de contact
+
+Écoles & centres de formation
+
+Agences auto & immobilier
+
+Texte :
+
+Toutes les organisations qui reçoivent des leads ou des demandes récurrentes via WhatsApp et qui veulent arrêter de perdre ces opportunités.
+
+H2 – Processus d’intégration avec SYLION
+
+3 étapes :
+
+Audit CRM & cas d’usage
+
+Identification des objets à créer (contacts, leads, tickets…) et des champs à synchroniser.
+
+Mise en place technique
+
+Connexion API CRM, configuration webhooks, mapping champs, sandbox + tests.
+
+Recette & déploiement
+
+Tests en conditions réelles, validation des équipes métiers, passage en production.
+
+H2 – Tarification de l’intégration CRM
+
+Texte :
+
+L’intégration CRM est généralement incluse dans un projet Business avancé ou Enterprise.
+Le coût dépend :
+
+du CRM utilisé,
+
+du nombre d’objets à synchroniser,
+
+de la complexité des workflows,
+
+et du niveau de personnalisation attendu.
+
+Lien texte :
+
+Voir les offres PME Starter et Business → /pricing
+
+En savoir plus sur l’offre Enterprise → /enterprise
+
+H2 – FAQ Intégration CRM & Workflows IA
+
+Ajoute une FAQ (accordion) avec au moins :
+
+Pouvez-vous intégrer notre CRM interne ou développé en interne ?
+
+Oui, tant qu’une API ou une base d’intégration est disponible.
+
+Sommes-nous obligés d’avoir un CRM pour utiliser l’Assistant WhatsApp IA ?
+
+Non, mais l’intégration CRM démultiplie la valeur sur le long terme.
+
+Combien de temps dure un projet d’intégration CRM ?
+
+Entre quelques jours et quelques semaines selon la complexité.
+
+Qui gère les droits d’accès et la sécurité côté CRM ?
+
+Les accès sont pilotés par vos équipes IT/CRM. SYLION utilise des clés/API limités au périmètre défini.
+
+Peut-on commencer sans intégration et l’ajouter plus tard ?
+
+Oui, c’est un scénario courant : démarrage rapide sans CRM, puis intégration ensuite.
+
+Ajoute un schema.org FAQPage comme sur les autres pages.
+
+H2 – CTA final
+
+Texte :
+
+Vous voulez connecter vos conversations WhatsApp à votre CRM et automatiser vos workflows commerciaux et support ?
+Parlons de vos cas d’usage et de votre stack CRM actuelle.
+
+Boutons :
+
+Parler à un expert CRM → /contact
+
+Tester l’assistant sur WhatsApp
+
+3. Technique
+
+Garder le thème dark premium, mêmes composants que les autres pages.
+
+Navigation : ajouter une entrée “Intégration CRM” (ou l’intégrer sous Services si c’est plus logique).
+
+Ne rien casser sur les autres pages.

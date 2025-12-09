@@ -11,8 +11,7 @@ export default function Navigation() {
     { href: "/services", label: "Services" },
     { href: "/pricing", label: "Tarifs" },
     { href: "/enterprise", label: "Enterprise" },
-    { href: "/assistant-whatsapp-maroc", label: "Assistant IA" },
-    { href: "/whatsapp-business-api-maroc", label: "WhatsApp API" },
+    { href: "/integration-crm-workflows", label: "Intégration CRM" },
     { href: "/contact", label: "Contact" },
   ];
 
