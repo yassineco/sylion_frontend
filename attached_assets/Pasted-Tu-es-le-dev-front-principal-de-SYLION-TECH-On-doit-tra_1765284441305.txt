@@ -1,0 +1,138 @@
+Tu es le dev front principal de SYLION TECH.
+On doit transformer la page /products encore trop basique en une vraie page “Nos Produits” alignée avec le reste du site (hero sombre premium + storytelling + CTA).
+
+Contexte :
+
+Tech : React + TypeScript + Tailwind.
+
+Thème : dark premium (#020617 / #050816), accents violet (#7C3AED) et vert WhatsApp.
+
+Deux produits seulement :
+
+Assistant WhatsApp IA
+
+Base de Connaissances IA (RAG)
+
+Les autres pages (pricing, enterprise, services, architecture, SEO…) existent déjà : il faut rester cohérent avec leur style.
+
+🔧 Objectif : réécrire complètement le composant de la page /products pour obtenir la structure suivante :
+
+Hero “Nos Produits”
+
+Badge en haut : Solutions IA prêtes à l'emploi.
+
+Titre : Nos Produits (en gros, avec gradient violet, comme les autres pages).
+
+Sous-titre : 2–3 lignes expliquant que SYLION propose des briques prêtes à déployer : Assistant WhatsApp IA + Base de connaissances IA hébergée au Maroc/UE.
+
+Deux boutons :
+
+Découvrir l'Assistant WhatsApp IA → lien vers /assistant-whatsapp-maroc
+
+Parler à un expert → lien vers /contact
+
+Ajoute le tracking GA4 sur les boutons en suivant la convention existante cta_click/products/....
+
+Bloc cartes produits (2 colonnes)
+
+Grille responsive : grid grid-cols-1 lg:grid-cols-2 gap-8.
+
+Carte 1 : Assistant WhatsApp IA
+
+Titre + petit badge Produit principal.
+
+Texte : assistant WhatsApp IA 24/7, multilingue FR/AR/Darija/EN, basé sur les documents du client, relié à la WhatsApp Business API.
+
+Liste de 4 bénéfices concrets (réponses auto, qualification des leads, redirection vers humain, réduction charge support).
+
+Mini-tags en bas (chips Tailwind) du style : WhatsApp API, Multilingue, IA + RAG.
+
+Bouton secondaire Voir les cas d'usage → ancre plus bas sur la page (section cas d’usage).
+
+Carte 2 : Base de Connaissances IA (RAG)
+
+Titre + badge Module IA.
+
+Texte : base de connaissances IA à partir des PDF/FAQ/procédures, hébergée au Maroc/UE, interrogeable via WhatsApp ou autres canaux.
+
+Liste de 4 bénéfices (recherche intelligente, réponses fiables, centralisation de la doc, multi-équipes).
+
+Tags : RAG, Docs internes, Hébergement local.
+
+Bouton En savoir plus → lien vers /whatsapp-business-api-maroc ou une section “RAG” de la page.
+
+Section “Quel produit pour votre situation ?”
+
+Titre : Quel produit est fait pour vous ?
+
+Sous-titre : 1 phrase.
+
+Tableau ou grille 2 colonnes comparant :
+
+Colonne gauche : Assistant WhatsApp IA → idéal pour PME/TPE, canal WhatsApp, leads, SAV.
+
+Colonne droite : Base de Connaissances IA (RAG) → idéal pour grosses quantités de documents, multi-équipes, besoin de recherche interne.
+
+Chaque colonne : 3–4 bullets du type “Vous recevez beaucoup de messages WhatsApp”, “Vous avez des FAQ PDF”, etc.
+
+Section “Cas d’usage concrets”
+
+Titre : Cas d’usage concrets.
+
+4 cartes (en grille responsive) mélangeant les deux produits :
+
+Qualification automatique des leads WhatsApp (Assistant + CRM)
+
+Réponses instantanées aux FAQ clients (Assistant + RAG)
+
+Support interne pour vos équipes (RAG seul)
+
+Pré-qualification avant transfert à un humain (Assistant seul).
+
+Chaque carte : icône, 2–3 lignes, mentionne clairement quel produit est utilisé.
+
+Bloc “Comment ça s’intègre à votre SI ?”
+
+Petit schéma texte (4 blocs horizontaux, comme sur les autres pages) :
+
+Client WhatsApp / Web
+
+Assistant IA SYLION
+
+Base de connaissances IA (RAG)
+
+Connecteurs CRM / SI
+
+1–2 phrases expliquant que les produits sont modulaires : on peut commencer par l’assistant seul, puis ajouter le RAG et les intégrations CRM plus tard.
+
+CTA final
+
+Fond dégradé (violet → bleu) comme sur les autres CTAs.
+
+Titre : Prêt à tester l’un de nos produits ?
+
+Sous-titre : phrase simple.
+
+Deux boutons :
+
+Demander une démo WhatsApp → /contact
+
+Voir les tarifs → /pricing
+
+GA4 : événements cta_click/products/cta_demo_final et cta_click/products/cta_pricing_final.
+
+🔒 Contraintes :
+
+Respecte la typographie, les espacements et le style des autres pages (cards, badges, CTA).
+
+100% responsive : 1 colonne sur mobile, 2 colonnes sur desktop quand pertinent.
+
+Pas de logique complexe, uniquement du contenu statique + liens + tracking GA4 existant.
+
+Merci de :
+
+Mettre à jour le composant React de la page /products.
+
+Garder les imports existants (Layout, SEO/Meta si déjà présents).
+
+Me montrer uniquement le code final du composant mis à jour.
