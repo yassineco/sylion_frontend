@@ -1,0 +1,167 @@
+u es l’IA qui maintient le site marketing de SYLION (Assistant WhatsApp IA).  
+On doit mettre à jour la page `/pricing` pour intégrer la NOUVELLE grille premium suivante :
+
+- Starter → 790 DH / mois
+- Business → 1 490 DH / mois
+- Enterprise → À partir de 4 900 DH / mois
+- Pack Activation 360 → 1 490 DH (one-shot)
+
+Tech :
+- React + TypeScript
+- TailwindCSS
+- Thème dark premium déjà en place
+- GA4 déjà branché sur les CTA → NE PAS casser le tracking existant (`trackEvent`).
+
+---
+
+🎯 OBJECTIF
+
+Mettre à jour le fichier de la page pricing (ex : `client/src/pages/pricing.tsx`) pour :
+
+1. Adapter les prix et le contenu des plans.
+2. Garder le design premium actuel (3 cartes + CTA).
+3. Ajouter un bloc distinct pour le **Pack Activation 360**.
+4. Garder les `onClick` de tracking GA4 déjà en place (boutons de démo / devis).
+
+---
+
+🧱 STRUCTURE ATTENDUE DE LA PAGE PRICING
+
+1) **Hero Pricing**
+
+- Titre : `Tarifs SYLION – Positionnement Premium assumé`
+- Sous-titre : 2–3 lignes expliquant que :
+  - l’outil est positionné premium,
+  - les prix reflètent l’expertise, la sécurité et le support,
+  - même en premium, ça reste largement inférieur au coût d’un agent à temps plein.
+
+Exemple de texte :
+
+> SYLION est une solution WhatsApp IA premium conçue pour les PME ambitieuses et les grands comptes :  
+> sécurité, intégrations, support FR/Darija et architecture scalable.  
+> Nos tarifs reflètent cette exigence, tout en restant largement inférieurs au coût d’un agent dédié.
+
+Garde le style visuel actuel (titre gradient violet, sous-titre gris, fond sombre).
+
+---
+
+2) **Cartes de pricing – 3 plans (Starter / Business / Enterprise)**
+
+Garde la grille actuelle (3 colonnes en desktop, 1 en mobile) mais mets à jour le contenu :
+
+### 🟣 Plan Starter
+
+- Titre : `Starter`
+- Prix : `790 DH / mois`
+- Sous-texte :  
+  `Pour démarrer sérieusement avec un Assistant WhatsApp IA sans faire de compromis.`
+- Bullets (exemple) :
+  - 1 numéro WhatsApp Business API
+  - Assistant IA multilingue (FR / AR / Darija)
+  - Scénarios standard + FAQ de base
+  - Dashboard simple de suivi
+  - Support par email
+- CTA : conserve le bouton actuel (ex : "Demander une démo" ou équivalent) avec le même `onClick` GA4 (`pricing_starter_demo` ou similaire).
+
+### 🟢 Plan Business (plan recommandé)
+
+- Titre : `Business`
+- Badge : `Recommandé`
+- Prix : `1 490 DH / mois`
+- Sous-texte :  
+  `Le plan idéal pour les PME qui veulent automatiser sérieusement WhatsApp.`
+- Bullets :
+  - Conversations illimitées*
+  - Assistant IA avancé (FR / AR / Darija / EN)
+  - RAG sur vos documents (FAQ, PDF, procédures)
+  - Intégrations CRM possibles (HubSpot, Odoo, Salesforce, etc.)*
+  - Support FR/Darija (email + WhatsApp)  
+  - Optimisations mensuelles des réponses IA
+- Ajouter une petite note en bas de carte :
+  `*Sous réserve des limites de la WhatsApp Business API et du fournisseur (360dialog / Meta).`
+- CTA : garder le bouton existant (ex : "Demander une démo" ou "Parler à un expert") avec le même tracking GA4 (category `pricing`, label `pricing_business_demo`).
+
+### 🔶 Plan Enterprise (premium grands comptes)
+
+- Titre : `Enterprise`
+- Prix : `À partir de 4 900 DH / mois`
+- Sous-texte :  
+  `Pour écoles, cliniques, groupes, banques, assurances et grandes structures.`
+- Bullets :
+  - Hébergement dédié (Maroc ou Europe)
+  - Multi-numéros WhatsApp
+  - Intégrations CRM / SI avancées (API, webhooks, middlewares)
+  - Workflows complexes (multi-équipe, multi-pays)
+  - SLA prioritaire & support dédié
+  - Environnements de recette & pré-production
+- En bas, une phrase :
+  `Tarification sur devis, ajustée selon vos volumes, intégrations et exigences de SLA.`
+- CTA : conserver le bouton "Demander un devis" avec le même event GA4 (`pricing_enterprise_devis`).
+
+---
+
+3) **Bloc Pack Activation 360 (one-shot)**
+
+Sous les 3 cartes de pricing, ajoute un bloc (full width) dédié au **Pack Activation 360** :
+
+- Style :  
+  - fond sombre légèrement différent (ex: `bg-[#111111] border border-gray-800 rounded-2xl p-6 mt-10`)
+  - éventuellement un petit badge `One-shot` ou `Pack d’activation`
+
+Contenu :
+
+- Titre : `Pack Activation WhatsApp Business API & 360`
+- Prix : `1 490 DH (one-shot)`
+- Description (paragraphe) :
+
+  > Nous prenons en charge pour vous toute la partie technique et administrative de mise en place de la WhatsApp Business API via 360dialog / Meta :  
+  > création du compte, vérifications, configuration, connexion au numéro, tests et mise en production.
+
+- Liste de 4 bullets :
+
+  - Création et configuration du compte 360dialog / Meta
+  - Liaison avec votre numéro WhatsApp Business
+  - Configuration technique de l’API (webhooks, clés, tests)
+  - Accompagnement jusqu’à la mise en service
+
+- En-dessous, une note importante :
+
+  > 💡 Les frais WhatsApp (conversations Meta) restent facturés directement par le fournisseur (360dialog / Meta).  
+  > Le pack couvre uniquement l’activation, la configuration et l’expertise SYLION.
+
+- CTA : un bouton `Parler à un expert` qui pointe vers `/contact`.  
+  Ajoute un `trackEvent` cohérent, par exemple :
+
+  ```ts
+  onClick={() =>
+    trackEvent({
+      action: 'cta_click',
+      category: 'pricing',
+      label: 'pricing_pack_activation_360',
+    })
+  }
+Alignement global & design
+
+Ne modifie pas la structure globale de la page (layout, container principal, fond, header).
+
+Les prix doivent être affichés clairement, en DH, avec / mois ou one-shot.
+
+Vérifier que la page reste 100% responsive :
+
+1 carte par ligne en mobile
+
+3 cartes côte à côte en desktop pour les plans
+
+Conserver les classes Tailwind de style premium déjà en place (rounded-2xl, border-gray-800, gradient sur les titres, etc.).
+
+Tracking GA4
+
+Ne supprime ni ne renomme les onClick déjà en place sur les boutons.
+
+Si tu ajoutes un nouveau CTA (ex : bouton pour le Pack Activation 360), utilise trackEvent avec :
+
+action: 'cta_click'
+
+category: 'pricing'
+
+label: 'pricing_pack_activation_360'

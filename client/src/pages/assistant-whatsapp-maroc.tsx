@@ -336,19 +336,19 @@ export default function AssistantWhatsAppMarocPage() {
             </p>
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               <div className="p-6 rounded-2xl border border-gray-800 bg-[#111111]">
-                <h3 className="text-lg font-bold text-white mb-2">PME Starter</h3>
-                <p className="text-3xl font-bold text-[#7C3AED] mb-2">590 DH<span className="text-sm text-gray-400">/mois</span></p>
-                <p className="text-sm text-gray-400">Pour démarrer avec un assistant simple et efficace.</p>
+                <h3 className="text-lg font-bold text-white mb-2">Starter</h3>
+                <p className="text-3xl font-bold text-[#7C3AED] mb-2">790 DH<span className="text-sm text-gray-400">/mois</span></p>
+                <p className="text-sm text-gray-400">Pour démarrer sérieusement avec un assistant sans compromis.</p>
               </div>
               <div className="p-6 rounded-2xl border border-[#4F46E5] bg-gradient-to-b from-[#4F46E5]/10 via-[#4F46E5]/5 to-transparent">
                 <h3 className="text-lg font-bold text-white mb-2">Business</h3>
-                <p className="text-3xl font-bold text-[#4F46E5] mb-2">990 DH<span className="text-sm text-gray-400">/mois</span></p>
-                <p className="text-sm text-gray-400">Pour les PME qui veulent automatiser sérieusement leur WhatsApp.</p>
+                <p className="text-3xl font-bold text-[#4F46E5] mb-2">1 490 DH<span className="text-sm text-gray-400">/mois</span></p>
+                <p className="text-sm text-gray-400">Le plan idéal pour automatiser sérieusement WhatsApp.</p>
               </div>
               <div className="p-6 rounded-2xl border border-gray-800 bg-[#111111]">
                 <h3 className="text-lg font-bold text-white mb-2">Enterprise</h3>
-                <p className="text-2xl font-bold text-[#F59E0B] mb-2">Sur devis</p>
-                <p className="text-sm text-gray-400">Pour écoles, cliniques, agences auto, groupes et grandes PME.</p>
+                <p className="text-xl font-bold text-[#F59E0B] mb-2">Dès 4 900 DH<span className="text-sm text-gray-400">/mois</span></p>
+                <p className="text-sm text-gray-400">Pour écoles, cliniques, banques, groupes et grandes structures.</p>
               </div>
             </div>
             <Link href="/pricing" data-testid="link-pricing">

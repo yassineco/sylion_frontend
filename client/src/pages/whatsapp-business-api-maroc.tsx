@@ -419,20 +419,20 @@ export default function WhatsappBusinessApiMarocPage() {
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="p-6 rounded-2xl border border-gray-800 bg-[#111111]">
-                <h3 className="text-lg font-bold text-white mb-2">PME Starter</h3>
-                <p className="text-3xl font-bold text-[#7C3AED] mb-2">590 DH<span className="text-sm text-gray-400">/mois</span></p>
-                <p className="text-sm text-gray-400">1 numéro, assistant simple, RAG basique.</p>
+                <h3 className="text-lg font-bold text-white mb-2">Starter</h3>
+                <p className="text-3xl font-bold text-[#7C3AED] mb-2">790 DH<span className="text-sm text-gray-400">/mois</span></p>
+                <p className="text-sm text-gray-400">1 numéro, assistant IA multilingue, dashboard simple.</p>
               </div>
               <div className="p-6 rounded-2xl border border-[#4F46E5] bg-gradient-to-b from-[#4F46E5]/10 to-transparent">
                 <span className="inline-block px-2 py-1 rounded-full bg-[#4F46E5] text-white text-xs font-medium mb-2">Recommandé</span>
                 <h3 className="text-lg font-bold text-white mb-2">Business</h3>
-                <p className="text-3xl font-bold text-[#4F46E5] mb-2">990 DH<span className="text-sm text-gray-400">/mois</span></p>
-                <p className="text-sm text-gray-400">Jusqu'à 3 numéros, RAG avancée, support prioritaire.</p>
+                <p className="text-3xl font-bold text-[#4F46E5] mb-2">1 490 DH<span className="text-sm text-gray-400">/mois</span></p>
+                <p className="text-sm text-gray-400">Conversations illimitées, RAG avancée, intégrations CRM.</p>
               </div>
               <div className="p-6 rounded-2xl border border-gray-800 bg-[#111111]">
                 <h3 className="text-lg font-bold text-white mb-2">Enterprise</h3>
-                <p className="text-2xl font-bold text-[#F59E0B] mb-2">Sur devis</p>
-                <p className="text-sm text-gray-400">Pour écoles, cliniques, agences auto, grands comptes.</p>
+                <p className="text-xl font-bold text-[#F59E0B] mb-2">Dès 4 900 DH<span className="text-sm text-gray-400">/mois</span></p>
+                <p className="text-sm text-gray-400">Hébergement dédié, multi-numéros, SLA prioritaire.</p>
               </div>
             </div>
             <div className="mt-8 text-center">
