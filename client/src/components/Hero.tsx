@@ -125,26 +125,26 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="grid grid-cols-3 gap-8 max-w-2xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-2xl mx-auto"
         >
-          <div className="text-center">
+          <div className="text-center py-4 sm:py-0">
             <div className="flex items-center justify-center mb-2">
               <Clock className="w-5 h-5 text-[#25D366] mr-2" />
-              <span className="text-3xl font-bold text-white">92%</span>
+              <span className="text-2xl sm:text-3xl font-bold text-white">92%</span>
             </div>
             <div className="text-sm text-gray-400">Réponses automatisées</div>
           </div>
-          <div className="text-center border-x border-white/10">
+          <div className="text-center py-4 sm:py-0 border-y sm:border-y-0 sm:border-x border-white/10">
             <div className="flex items-center justify-center mb-2">
               <Users className="w-5 h-5 text-[#25D366] mr-2" />
-              <span className="text-3xl font-bold text-white">48h</span>
+              <span className="text-2xl sm:text-3xl font-bold text-white">48h</span>
             </div>
             <div className="text-sm text-gray-400">Libérées par mois</div>
           </div>
-          <div className="text-center">
+          <div className="text-center py-4 sm:py-0">
             <div className="flex items-center justify-center mb-2">
               <CheckCircle className="w-5 h-5 text-[#25D366] mr-2" />
-              <span className="text-3xl font-bold text-white">99%</span>
+              <span className="text-2xl sm:text-3xl font-bold text-white">99%</span>
             </div>
             <div className="text-sm text-gray-400">Précision sur vos docs</div>
           </div>

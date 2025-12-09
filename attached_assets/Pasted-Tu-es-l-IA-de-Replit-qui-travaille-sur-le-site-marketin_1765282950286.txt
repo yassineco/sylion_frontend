@@ -1,0 +1,146 @@
+Tu es l’IA de Replit qui travaille sur le site marketing Next.js/React de SYLION (Assistant WhatsApp IA, thème dark).
+
+🎯 Problème à corriger
+- Sur iPhone (mobile), le **menu hamburger** de la navbar ne répond pas : quand on clique dessus, le menu ne s’ouvre pas.
+- Objectif : avoir une **navigation mobile fonctionnelle et fluide**, et vérifier rapidement la responsivité des sections clés.
+
+Merci de faire les actions suivantes, en TypeScript + Tailwind (ou le système de style utilisé dans le projet).
+
+---
+
+## 1. Corriger le composant de navigation mobile
+
+1) Localise le composant de header / navbar (ex: `Navbar.tsx`, `Header.tsx`, etc.).
+
+2) Assure-toi que ce composant est bien un composant client :
+
+```ts
+'use client';
+en tout début de fichier (si ce n’est pas déjà le cas).
+
+Vérifie que le bouton hamburger :
+
+est bien un <button> (et pas un simple <div>)
+
+possède un onClick qui toggle un state React (ex: isOpen).
+
+Si ce n’est pas le cas, implémente une logique simple :
+
+ts
+Copier le code
+const [isOpen, setIsOpen] = useState(false);
+
+const toggleMenu = () => setIsOpen((prev) => !prev);
+Et sur le bouton :
+
+tsx
+Copier le code
+<button
+  type="button"
+  aria-label="Ouvrir le menu"
+  onClick={toggleMenu}
+  className="md:hidden ..."
+>
+  {/* icône hamburger */}
+</button>
+Implémente le panneau de menu mobile :
+
+visible uniquement sur mobile (md:hidden)
+
+caché sur desktop (hidden md:flex pour le menu desktop classique)
+
+affiché en overlay pleine largeur lorsqu’il est ouvert.
+
+Exemple de pattern :
+
+tsx
+Copier le code
+<nav className="hidden md:flex ...">
+  {/* liens desktop */}
+</nav>
+
+{/* Menu mobile */}
+{isOpen && (
+  <div
+    className="
+      fixed inset-0 z-50
+      flex flex-col
+      bg-neutral-950/95 backdrop-blur
+      md:hidden
+    "
+  >
+    <div className="flex items-center justify-between px-4 py-4">
+      {/* logo */}
+      <button
+        type="button"
+        aria-label="Fermer le menu"
+        onClick={toggleMenu}
+        className="..."
+      >
+        {/* icône close */}
+      </button>
+    </div>
+
+    <nav className="flex flex-col gap-4 px-4 pb-6">
+      {/* liens nav → Home, Produits, Services, Tarifs, Enterprise, Contact */}
+    </nav>
+  </div>
+)}
+Assure-toi que les liens du menu mobile ferment le menu après clic :
+
+tsx
+Copier le code
+<Link href="/pricing" onClick={() => setIsOpen(false)}>
+  Tarifs
+</Link>
+Vérifie qu’il n’y a pas de pointer-events-none, opacity-0, hidden ou autre classe qui empêcherait le menu d’apparaître en mobile.
+
+2. Vérifier les breakpoints et la responsivité des sections clés
+Passe rapidement sur les pages suivantes, en viewport mobile, et ajuste si nécessaire :
+
+Home :
+
+Hero : titre + sous-titre + 2 boutons → empilés verticalement (flex-col) en mobile.
+
+Sections cartes (résultats, “Tout ce dont votre PME a besoin”, cas d’usage) :
+
+1 colonne sur mobile (grid grid-cols-1 gap-4)
+
+2 ou 3 colonnes à partir de md ou lg.
+
+Pricing :
+
+Utiliser un layout type :
+
+grid grid-cols-1 gap-6 md:grid-cols-3
+
+S’assurer que les grandes cartes ne débordent pas sur les côtés.
+
+Pages /enterprise, /integration-crm-workflows, /architecture-securite :
+
+Pour chaque grille de cartes, vérifier qu’on a bien un fallback mobile :
+
+grid-cols-1 sur mobile
+
+md:grid-cols-2 ou lg:grid-cols-3 selon le cas.
+
+Évite les largeurs fixes du type w-[400px] sur mobile ; privilégie :
+
+w-full max-w-sm mx-auto pour centrer une carte.
+
+3. Nettoyage & accessibilité
+Ajoute les attributs aria-label ou aria-expanded sur le bouton hamburger si possible.
+
+Vérifie le z-index du menu mobile (z-50 ou supérieur) pour qu’il passe au-dessus du contenu.
+
+Évite que le body reste scrollable sous le menu (optionnel mais idéal) :
+
+soit en ajoutant une classe sur <body> quand isOpen === true
+
+soit en laissant comme c’est si la solution est trop intrusive pour l’instant.
+
+À la fin, merci de :
+
+Lister les fichiers modifiés (navbar, layout, etc.).
+
+Confirmer que le menu mobile fonctionne dans l’émulateur mobile (small breakpoint) et que les principales sections sont lisibles et bien empilées.
