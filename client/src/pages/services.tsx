@@ -71,8 +71,8 @@ const securityFeatures = [
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-[#0B0B0B] text-white">
-      <div className="max-w-6xl mx-auto px-6 py-20">
+    <main className="min-h-screen bg-[#0B0B0B] text-white overflow-x-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-20">
         <Link href="/" data-testid="link-home">
           <Button variant="ghost" className="mb-8 text-white hover:bg-white/10" data-testid="button-back">
             ← Retour

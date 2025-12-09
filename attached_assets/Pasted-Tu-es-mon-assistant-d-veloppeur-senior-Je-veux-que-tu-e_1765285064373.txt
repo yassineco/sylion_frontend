@@ -1,0 +1,132 @@
+Tu es mon assistant développeur senior.
+Je veux que tu effectues un audit rapide mais rigoureux avant que je télécharge le projet et que je bascule sur VSCode.
+
+🎯 Objectif : vérifier que tout le site est cohérent, fonctionnel, responsive et prêt pour déploiement local/VPS.
+
+Voici les points à vérifier une par une :
+
+🔗 1. Vérification complète de la navigation
+
+Vérifie que tous les liens de la navbar fonctionnent correctement :
+
+/
+
+/pricing
+
+/products
+
+/services
+
+/enterprise
+
+/architecture-securite
+
+/assistant-whatsapp-maroc
+
+/whatsapp-business-api-maroc
+
+/contact
+
+Vérifie que le menu mobile fonctionne :
+
+Ouverture/fermeture du hamburger
+
+Scroll lock actif quand le menu est ouvert
+
+Les liens ferment bien le menu en navigation
+
+🔍 2. Vérification du maillage interne (SEO + UX)
+
+Pour chaque page suivante :
+
+/products
+
+/services
+
+/enterprise
+
+/assistant-whatsapp-maroc
+
+/whatsapp-business-api-maroc
+
+Vérifie qu’il existe bien au moins un lien vers :
+
+/pricing
+
+/contact
+
+/enterprise ou /architecture-securite
+
+Et que les liens internes ne sont ni cassés ni absents.
+
+📱 3. Vérification responsive mobile (iPhone / small screens)
+
+Pour chaque page :
+
+Vérifie qu’il n’y a aucun débordement horizontal
+
+Vérifie que les grilles passent bien :
+
+1 colonne mobile
+
+2 ou 3 colonnes desktop selon les sections
+
+Vérifie que les boutons sont lisibles et ne se chevauchent pas
+
+Vérifie que les CTA restent visibles sans déborder
+
+🧩 4. Vérification GA4 Tracking
+
+Confirme que :
+
+Tous les boutons CTA émettent bien un event GA4 :
+
+cta_click/...
+
+form_submit/...
+
+Les nouveaux éléments ajoutés dans /services et /products ont :
+
+cta_click/services/...
+
+cta_click/products/...
+
+Que l’ID GA4 est bien lu via import.meta.env.VITE_GA_MEASUREMENT_ID
+
+🎨 5. Vérification consistence design
+
+Police, couleurs, arrondis, spacing cohérents avec le reste du site
+
+Les badges utilisent les bonnes couleurs (violet, vert WhatsApp, bleu)
+
+Les sections ont bien :
+
+titres text-4xl font-bold
+
+sous-titres text-gray-300
+
+cartes avec bg-[#0F0F0F] ou bg-[#0F0F10]
+
+Pas de page encore en thème “blanc” ou fade
+
+🧹 6. Vérification du code
+
+Pas d’imports inutilisés
+
+Pas de warnings dans la console navigateur
+
+Pas d’erreurs 404 sur les assets
+
+Composants uniformisés (boutons, cartes, tags, icons)
+
+🧾 7. Génère un rapport clair
+
+Dans ta réponse :
+
+Liste les points OK / NOK
+
+Indique les éventuels fichiers à corriger
+
+Fournis les corrections si nécessaires (JSX/TSX)
+
+Quand tu as tout vérifié, propose-moi la version finale parfaitement prête pour téléchargement et migration vers un VPS + repo Git.
