@@ -1,0 +1,321 @@
+Tu es l’IA de Replit sur un site marketing pour le SaaS SYLION – Assistant WhatsApp IA.
+Le site est déjà en dark theme premium, avec des pages : Home, Produits, Services, Tarifs, Contact et une page SEO WhatsApp Business API Maroc.
+
+🎯 Objectif de cette tâche :
+Créer une nouvelle page SEO dédiée à la requête :
+
+“assistant whatsapp maroc”, “bot whatsapp maroc”, “assistant whatsapp ia pour pme”
+
+Cette page doit :
+
+Être fortement optimisée SEO (H1/H2/H3 propres, meta title + meta description)
+
+Rester cohérente avec le design actuel (dark, premium, accents violet/vert)
+
+Expliquer clairement ce qu’est un assistant WhatsApp IA, ses cas d’usage au Maroc, son fonctionnement et ses bénéfices
+
+Mettre en avant la solution SYLION avec des CTA vers la démo / contact / pricing
+
+Intégrer une section FAQ + maillage interne vers /pricing et /whatsapp-business-api-maroc
+
+1. Implémentation technique
+
+Crée une nouvelle page, par exemple :
+
+Si Next.js App Router : src/app/assistant-whatsapp-maroc/page.tsx
+
+Sinon, une page React dans le dossier pages, par ex : src/pages/AssistantWhatsAppMaroc.tsx
+
+Ajoute :
+
+Un meta title et une meta description spécifiques à cette page.
+
+Si App Router : utilise l’API metadata ou generateMetadata.
+
+Ajoute un lien dans la navigation (ou sous “Produits”) intitulé :
+
+Assistant WhatsApp IA
+→ qui pointe vers cette nouvelle page.
+
+Réutilise les composants existants (layout, containers, cartes, boutons) pour rester cohérent visuellement avec la home et la page pricing.
+
+2. Structure de contenu SEO (H1/H2/H3) + texte à intégrer
+
+Tu vas suivre exactement la structure ci-dessous.
+Tu peux légèrement reformuler pour la fluidité, mais sans changer le fond.
+
+H1
+
+Assistant WhatsApp IA pour PME au Maroc — Guide complet 2025
+
+H2 – Pourquoi un assistant WhatsApp est devenu indispensable au Maroc ?
+
+Paragraphe :
+
+Au Maroc, WhatsApp est devenu le premier canal de communication entre les clients et les entreprises : demandes d’informations, prises de rendez-vous, réservations, réclamations, suivi de commande…
+
+Le problème : les équipes support ne peuvent pas répondre 24h/24, ni gérer des dizaines de conversations en parallèle, surtout le soir et le week-end.
+
+L’Assistant WhatsApp IA résout ce problème : il répond automatiquement, 24h/24, dans les langues de vos clients (Français, Arabe, Darija, Anglais), et s’appuie sur vos propres informations (FAQ, catalogues, procédures).
+
+Ajoute un CTA bouton en dessous :
+
+Label : Tester l’assistant sur WhatsApp
+
+Action : lien vers ton numéro / QR de démo (le même que sur la home).
+
+H2 – Qu’est-ce qu’un Assistant WhatsApp IA ?
+
+Paragraphe :
+
+Un Assistant WhatsApp IA est un agent virtuel connecté à la WhatsApp Business API qui :
+
+Liste à puces :
+
+comprend les messages de vos clients,
+
+répond automatiquement à leurs questions,
+
+consulte vos documents internes (FAQ, catalogues, procédures),
+
+qualifie les demandes (prospects, SAV, informations),
+
+transfère au bon interlocuteur humain si nécessaire.
+
+Ajoute une phrase :
+
+Contrairement aux bots “scriptés” avec des menus fixes, l’assistant IA comprend le langage naturel, même lorsque le client mélange Français et Darija.
+
+H2 – Assistant WhatsApp IA vs bot scripté vs équipe humaine
+
+Ajoute un tableau comparatif (ou 3 colonnes) :
+
+Colonnes :
+
+“Équipe humaine seule”
+
+“Bot scripté (menus)”
+
+“Assistant WhatsApp IA (SYLION)”
+
+Lignes avec texte synthétique :
+
+Disponibilité
+
+Humaine : “Heures de bureau uniquement”
+
+Bot : “24/7 mais limité aux menus”
+
+IA : “24/7 avec compréhension du langage naturel”
+
+Qualité de réponse
+
+Humaine : “Variable selon le conseiller”
+
+Bot : “Bonne si le client suit les menus”
+
+IA : “Stable, basée sur vos documents et règles”
+
+Capacité
+
+Humaine : “Quelques conversations en parallèle”
+
+Bot : “Beaucoup, mais scenarios rigides”
+
+IA : “Conversations simultanées illimitées”
+
+Évolution
+
+Humaine : “Formation continue coûteuse”
+
+Bot : “Nécessite de modifier les arbres de décision”
+
+IA : “Mise à jour simple des documents et prompts”
+
+Conclusion :
+
+Pour une PME marocaine qui veut automatiser WhatsApp sérieusement, l’assistant IA est aujourd’hui le meilleur équilibre entre qualité de service, coût et scalabilité.
+
+H2 – Cas d’usage concrets au Maroc
+
+Titre intro :
+
+Voici quelques exemples de ce que peut faire un Assistant WhatsApp IA pour différents secteurs :
+
+Crée une grille de cartes (comme sur la home) avec au minimum ces 5 secteurs :
+
+Immobilier
+
+Réponses aux demandes de visite, envoi de fiches biens, collecte de coordonnées, qualification des leads.
+
+Écoles & Formations
+
+Informations sur les frais, horaires, inscriptions, filières, concours, avec envoi de documents PDF.
+
+Cliniques & Centres médicaux
+
+Questions fréquentes, spécialités, horaires, prises de contact et pré-qualification des demandes.
+
+Restaurants & Commerces
+
+Envoi du menu, adresse, horaires, prise de réservation ou commandes simples.
+
+Agences auto & Leasing
+
+Informations sur les modèles, tarifs, financement, collecte des leads chauds pour les commerciaux.
+
+H2 – Comment fonctionne l’Assistant WhatsApp IA SYLION ?
+
+Ajoute une section en 3 étapes (comme ta section “opérationnel en 10 minutes”) :
+
+H3 – 1. Connexion à votre numéro WhatsApp
+
+SYLION se connecte à votre numéro via la WhatsApp Business API (ex : 360dialog). Vous gardez la propriété du numéro.
+
+H3 – 2. Import de vos documents et règles métiers
+
+FAQ, procédures internes, fiches produits, catalogues, conditions commerciales…
+L’assistant s’appuie sur vos informations pour répondre. C’est la couche RAG.
+
+H3 – 3. L’IA répond 24/7 dans la langue de vos clients
+
+L’Assistant comprend le Français, l’Arabe, la Darija et l’Anglais, y compris le code-switching.
+Les conversations sont tracées et vous gardez un contrôle complet sur les réponses.
+
+Ajoute un lien discret :
+
+Label : En savoir plus sur la WhatsApp Business API au Maroc
+
+Lien : /whatsapp-business-api-maroc
+
+H2 – Résultats typiques observés
+
+Utilise les chiffres déjà présents sur ta home pour rester cohérent :
+
+Crée 3 blocs/chiffres :
+
+92%
+
+de réponses automatisées sur WhatsApp
+
+48h/libérées par mois
+
+de temps gagné par conseiller en moyenne
+
+99%
+
+de précision sur les réponses issues de vos documents (RAG)
+
+Texte rapide :
+
+Les chiffres varient selon les secteurs, mais la tendance est claire : l’Assistant WhatsApp IA absorbe la majorité des demandes récurrentes et laisse vos équipes se concentrer sur les cas à forte valeur ajoutée.
+
+H2 – Combien coûte un Assistant WhatsApp IA ?
+
+Texte :
+
+Le coût dépend du niveau d’automatisation, du nombre de numéros et des intégrations souhaitées (CRM, outils internes…).
+SYLION propose une tarification claire, adaptée au marché marocain :
+
+Résumé des 3 plans (sans détailler tous les bullets, on renvoie à /pricing) :
+
+PME Starter – 590 DH / mois
+
+Pour démarrer avec un assistant simple et efficace.
+
+Business – 990 DH / mois
+
+Pour les PME qui veulent automatiser sérieusement leur WhatsApp.
+
+Enterprise – Sur devis
+
+Pour écoles, cliniques, agences auto, groupes et grandes PME (intégrations avancées, multi-numéros, SLA, etc.)
+
+Ajoute un bouton :
+
+Label : Voir le détail des tarifs
+
+Lien : /pricing
+
+H2 – Comment démarrer en 10 minutes avec SYLION ?
+
+Refais une mini-section “mise en route” très simple en 3 étapes :
+
+Vous réservez un créneau de démo
+
+On analyse votre activité, vos volumes et vos objectifs.
+
+On configure votre assistant
+
+Connexion WhatsApp API, import de vos documents, réglage des réponses clés.
+
+Vous testez en conditions réelles
+
+Vous suivez les conversations, ajustez les réponses, puis ouvrez aux vrais clients.
+
+Ajoute deux boutons côte à côte :
+
+Tester l’assistant sur WhatsApp → démo directe
+
+Demander une démo → /contact
+
+H2 – FAQ : Assistant WhatsApp pour PME marocaines
+
+Ajoute une section FAQ (en accordions ou liste) avec au moins ces questions :
+
+Faut-il absolument la WhatsApp Business API pour utiliser l’assistant IA ?
+
+Oui. Pour une intégration professionnelle, scalable et sécurisée, l’API est indispensable.
+
+Est-ce compliqué techniquement à mettre en place ?
+
+Non. L’équipe SYLION s’occupe de la configuration technique. Côté client, il suffit de valider le numéro et de fournir les documents nécessaires (FAQ, procédures, offres…).
+
+L’assistant peut-il répondre en Darija et en mélange Français/Darija ?
+
+Oui, c’est même un de ses points forts. L’IA comprend le code-switching naturel utilisé au Maroc.
+
+Et si l’assistant ne sait pas répondre ?
+
+Il peut proposer de transférer la demande à un agent humain ou d’enregistrer la demande pour traitement ultérieur, selon les règles définies.
+
+Que se passe-t-il si notre activité évolue ?
+
+Il suffit de mettre à jour vos documents ou vos règles métiers. L’assistant s’adapte sans gros développement.
+
+H2 – CTA final : Passez à l’Assistant WhatsApp IA
+
+Texte :
+
+Vous voulez arrêter de perdre des messages WhatsApp et offrir une réponse professionnelle 24/7 à vos clients ?
+L’Assistant WhatsApp IA SYLION est conçu pour les PME marocaines, avec une mise en place rapide, un accompagnement local et une technologie de pointe.
+
+Deux boutons :
+
+Tester l’assistant sur WhatsApp
+
+Demander une démo (vers /contact)
+
+3. SEO technique
+
+Meta Title :
+Assistant WhatsApp IA Maroc – Automatisation pour PME (Guide complet 2025)
+
+Meta Description :
+Découvrez comment un Assistant WhatsApp IA peut répondre automatiquement à vos clients 24/7 au Maroc, en Français, Arabe, Darija et Anglais, et libérer du temps à vos équipes.
+
+Respecte une structure sémantique propre :
+
+1 seul <h1>
+
+<h2> pour les grandes sections
+
+<h3> pour les sous-parties (ex : étapes, FAQ)
+
+Si possible, ajoute un schema.org FAQPage en JSON-LD pour la section FAQ.
+
+Ta mission :
+
+Implémenter cette page complète, responsive, en dark theme, cohérente avec le reste du site, et optimisée SEO pour “assistant whatsapp maroc / bot whatsapp maroc / assistant whatsapp ia pour PME”.
+
+Ne pas casser les autres pages ni la navigation.
