@@ -1,0 +1,111 @@
+Tu es senior DevOps + front architect.
+Contexte :
+
+Projet actuel sur Replit = site marketing SYLION TECH
+
+Stack : React + TypeScript (Vite), thème dark, plusieurs pages : /, /pricing, /products, /services, /enterprise, /architecture-securite, /assistant-whatsapp-maroc, /whatsapp-business-api-maroc, /integration-crm-workflows, /contact.
+
+Objectif : je veux arrêter Replit et continuer en local (VS Code) puis sur VPS.
+
+Je veux un guide d’export propre Replit → disque local, écrit en français, clair, copiable dans un fichier markdown.
+
+Ta mission
+
+Créer un document complet docs/EXPORT_REPLIT_TO_LOCAL.md qui explique, étape par étape, comment sortir proprement ce projet de Replit pour le faire tourner en local, puis le préparer pour un déploiement futur.
+
+Le document doit être pédagogique et opérationnel, pas théorique.
+Il doit contenir des commandes exactes, des exemples de fichiers et des checklists.
+
+Structure demandée du document
+
+Merci de générer directement le contenu markdown avec cette structure :
+
+# Export Replit → Environnement local (SYLION TECH)
+
+## 1. Pré-requis sur la machine locale
+
+Node.js version recommandée (déduite du projet : via package.json ou config Vite)
+
+Git installé
+
+VS Code recommandé
+
+## 2. Nettoyage avant export sur Replit
+
+Vérifier qu’aucun secret n’est dans le code (clés API, ID GA, etc.)
+
+Créer un fichier .env.example avec uniquement les noms de variables nécessaires (ex : VITE_GA_MEASUREMENT_ID=..., autres variables si présentes)
+
+Expliquer que les vraies valeurs seront mises plus tard dans .env.local ou .env en local
+
+Vérifier le package.json (scripts dev, build, preview)
+
+## 3. Méthode recommandée : export via Git
+
+Si le Repl n’est pas encore connecté à GitHub :
+
+Étapes pour connecter le Repl à un repo GitHub
+
+Premier commit propre avec message type : "chore: export from replit (version landing SYLION)"
+
+Si le Git est déjà configuré :
+
+Vérifier le status, faire un git add ., git commit, git push
+
+Expliquer comment cloner le repo sur la machine locale :
+
+git clone <URL_DU_REPO>
+cd <nom-du-projet>
+npm install
+npm run dev
+
+
+## 4. Méthode alternative : export via ZIP
+
+Étapes dans l’UI Replit pour télécharger le projet en .zip
+
+Instructions pour : dézipper → ouvrir le dossier dans VS Code → lancer :
+
+npm install
+npm run dev
+
+
+## 5. Vérifier que le projet tourne bien en local
+
+Commande à lancer (npm run dev ou pnpm dev selon le projet, à déduire)
+
+URL locale à ouvrir (http://localhost:5173 ou autre, selon Vite config)
+
+Checklist rapide :
+
+Navigation fonctionne (home, pricing, services, enterprise…)
+
+Menu mobile OK
+
+Aucune erreur console majeure
+
+## 6. Préparer le projet pour déploiement VPS (aperçu rapide)
+
+Ajouter une section courte qui liste ce qui sera fait plus tard :
+
+Créer un build de production : npm run build
+
+Tester le build : npm run preview
+
+Noter la commande à lancer côté serveur (serveur Node ou Nginx + fichiers statiques, selon la nature du build Vite)
+
+Préciser que ce sera détaillé dans un futur document DEPLOY_VPS_GUIDE.md.
+
+Contraintes
+
+Tout le contenu doit être en français.
+
+Utilise des blocs de code pour les commandes bash.
+
+Ajoute des petites checklists avec - [ ] pour que je puisse cocher dans VS Code.
+
+Adapte les commandes (npm / pnpm / yarn) en fonction de ce que tu détectes dans package.json du projet.
+
+Si une information est incertaine (ex : port exact utilisé par Vite), propose une valeur par défaut + une phrase expliquant comment la vérifier.
+
+Génère maintenant le contenu complet du fichier docs/EXPORT_REPLIT_TO_LOCAL.md sans rien omettre.
