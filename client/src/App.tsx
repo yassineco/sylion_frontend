@@ -9,6 +9,7 @@ import ProductsPage from "@/pages/products";
 import ServicesPage from "@/pages/services";
 import PricingPage from "@/pages/pricing";
 import ContactPage from "@/pages/contact";
+import WhatsappBusinessApiMarocPage from "@/pages/whatsapp-business-api-maroc";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -19,6 +20,7 @@ function Router() {
       <Route path="/services" component={ServicesPage} />
       <Route path="/pricing" component={PricingPage} />
       <Route path="/contact" component={ContactPage} />
+      <Route path="/whatsapp-business-api-maroc" component={WhatsappBusinessApiMarocPage} />
       <Route component={NotFound} />
     </Switch>
   );

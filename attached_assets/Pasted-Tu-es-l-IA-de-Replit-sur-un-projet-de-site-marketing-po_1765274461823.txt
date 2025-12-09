@@ -1,0 +1,383 @@
+Tu es l’IA de Replit sur un projet de site marketing pour un SaaS nommé SYLION – Assistant WhatsApp IA.
+Le design actuel est dark, premium (comme la home que tu vois déjà).
+
+🎯 Objectif de cette tâche :
+Créer une nouvelle page SEO dédiée à la requête :
+
+“WhatsApp Business API Maroc”
+
+Cette page doit :
+
+Être fortement optimisée SEO (contenu riche, H1/H2/H3 propres, meta title + description)
+
+Garder le même style visuel que le reste du site (dark, moderne)
+
+Intégrer des CTA vers la démo WhatsApp / contact
+
+Expliquer clairement ce qu’est la WhatsApp Business API, les prix, l’activation, les providers, et comment l’automatiser avec l’IA de Sylion.
+
+1. Implémentation technique
+
+Crée un nouveau fichier de page, par exemple :
+
+Si c’est du Next.js : src/app/whatsapp-business-api-maroc/page.tsx
+
+Sinon, une page React dans le dossier approprié du router, par exemple : src/pages/WhatsappBusinessApiMaroc.tsx
+
+Ajoute :
+
+Un <title> SEO et une meta description spécifiques à cette page.
+
+Si Next.js App Router : utilise l’API metadata ou generateMetadata.
+
+Ajoute un lien “WhatsApp Business API” dans le menu / navbar qui pointe vers cette page.
+
+Réutilise les composants/sections existants (layout, container, typographie, boutons) pour rester cohérent avec la home.
+
+2. Contenu SEO à intégrer (structure + texte)
+
+Utilise exactement la structure de titres suivante (H1, H2, H3).
+Mets les textes en français, tels quels ou légèrement reformulés si nécessaire, mais sans changer le message.
+
+H1
+
+WhatsApp Business API Maroc — Le Guide Complet 2025 (Prix, Activation, Automatisation IA)
+
+H2 – Introduction : Pourquoi toutes les entreprises marocaines passent à WhatsApp API ?
+
+Texte :
+
+Au Maroc, plus de 90% des échanges clients passent déjà par WhatsApp. Mais la majorité des entreprises utilisent encore un numéro classique, impossible à connecter à un assistant IA, un CRM, ou un système de gestion.
+
+La WhatsApp Business API (WABA) est la version professionnelle de WhatsApp :
+✔️ multi-utilisateurs
+✔️ automatisation avancée
+✔️ messages illimités
+✔️ intégration IA / CRM
+✔️ sécurité entreprise
+
+C’est la solution utilisée par les écoles, agences immobilières, cliniques, centres auto, e-commerce, banques…
+
+Dans ce guide, le lecteur va découvrir :
+
+ce qu’est réellement la WhatsApp Business API,
+
+comment l’activer au Maroc,
+
+les prix officiels (Meta),
+
+les meilleurs providers (360dialog, Infobip, Meta),
+
+et comment automatiser les réponses avec une IA 24/7.
+
+Ajoute un CTA bouton en dessous :
+
+Label : Parler à un expert WhatsApp
+
+Action : renvoie vers la page contact ou vers le bouton de démo WhatsApp existant.
+
+H2 – Qu’est-ce que la WhatsApp Business API ?
+
+Paragraphe :
+
+La WhatsApp Business API n’est pas une application et ce n’est pas l’application WhatsApp Business classique.
+C’est une infrastructure professionnelle fournie par Meta qui permet à une entreprise de :
+
+Liste à puces :
+
+Répondre automatiquement aux messages clients
+
+Gérer des milliers de conversations en parallèle
+
+Connecter WhatsApp à une IA (comme l’assistant SYLION)
+
+Donner l’accès à plusieurs agents en même temps
+
+Envoyer des messages transactionnels (notifications, confirmations)
+
+Gérer plusieurs numéros de manière centralisée
+
+Conclusion :
+
+En résumé, c’est la seule solution sérieuse pour les entreprises qui veulent professionnaliser leur WhatsApp.
+
+H2 – WhatsApp Business API vs WhatsApp Business (application)
+
+Ajoute un tableau comparatif avec lignes suivantes :
+
+Colonnes :
+
+“Fonction”
+
+“WhatsApp Business (app)”
+
+“WhatsApp Business API”
+
+Lignes :
+
+Appareil :
+
+App : “Un seul téléphone”
+
+API : “Serveur + multi-agents”
+
+Messages :
+
+App : “Limités par l’humain”
+
+API : “Scalable, adapté à gros volumes”
+
+Automatisation :
+
+App : “Réponses rapides basiques”
+
+API : “IA + workflows avancés”
+
+RAG / documents internes :
+
+App : “Impossible”
+
+API : “Possible avec une IA comme Sylion”
+
+Multi-agent :
+
+App : “Non”
+
+API : “Oui, plusieurs conseillers”
+
+CRM / intégration :
+
+App : “Non”
+
+API : “Oui, via API et connecteurs”
+
+Sécurité / SLA :
+
+App : “Niveau utilisateur”
+
+API : “Niveau entreprise”
+
+Ajoute une phrase de conclusion :
+
+Si une entreprise veut un assistant IA sur WhatsApp, la WhatsApp Business API est indispensable.
+
+H2 – Comment activer WhatsApp Business API au Maroc ?
+
+Crée une section étapes en 3 blocs.
+
+H3 – Étape 1 : Choisir un provider officiel
+
+Texte :
+
+L’activation de l’API se fait via un provider officiel (Business Solution Provider). Les plus utilisés au Maroc :
+
+Liste :
+
+360dialog : prix bas, onboarding simple, idéal PME
+
+Meta Cloud API direct : très performant mais process plus lourd
+
+Infobip : très solide pour le segment enterprise
+
+Twilio : multi-canaux, mais plus cher
+
+Ajoute un paragraphe :
+
+Pour 90–95% des PME et grandes PME marocaines, 360dialog est généralement le meilleur compromis entre simplicité, coût et fiabilité.
+
+H3 – Étape 2 : Valider le numéro WhatsApp
+
+Texte :
+
+Le provider envoie un SMS ou un appel de validation.
+L’entreprise peut utiliser :
+
+un nouveau numéro dédié à l’assistant,
+
+ou parfois migrer un numéro existant, selon les contraintes.
+
+H3 – Étape 3 : Connecter l’API à une solution comme SYLION
+
+Texte :
+
+Une fois l’API activée, il faut la connecter à une plateforme : c’est là où intervient SYLION.
+SYLION gère :
+
+la partie IA,
+
+le routage des messages,
+
+la base de connaissances,
+
+le suivi des usages,
+
+et l’interface d’administration.
+
+H2 – Prix de WhatsApp Business API au Maroc (2025)
+
+Texte :
+
+Les tarifs de base sont définis par Meta et facturés par le provider (360dialog, Infobip, etc.). On distingue deux grandes catégories de conversations.
+
+H3 – 1. Conversations de session (réponses dans les 24h)
+
+Quand un client écrit à l’entreprise, une fenêtre de 24h s’ouvre : tous les messages échangés dans ce délai sont considérés comme une seule “conversation de session”.
+
+Au Maroc, le coût est généralement autour de 0,30–0,45 DH par conversation, selon le type de message et le provider.
+
+H3 – 2. Conversations templates (notifications push)
+
+Lorsqu’une entreprise initie la conversation (ex : rappel de rendez-vous, code d’accès, relance de paiement), elle utilise des “templates” validés par Meta.
+Ces conversations sont facturées un peu plus cher, mais restent très adaptées pour :
+
+les confirmations de rendez-vous,
+
+les rappels de factures,
+
+les notifications de livraison, etc.
+
+Ajoute un rappel :
+
+Ces coûts sont indépendants de la couche IA. L’IA et l’infrastructure Sylion sont facturées séparément sous forme d’abonnement mensuel.
+
+H2 – Automatiser WhatsApp avec une IA : le vrai changement
+
+Texte :
+
+La vraie révolution ne vient pas seulement de l’API, mais de ce qu’on branche dessus.
+Depuis 2024–2025, les entreprises marocaines passent à des assistants IA capables de :
+
+Liste :
+
+Répondre automatiquement 24/7, même à 3h du matin
+
+Comprendre le Français, l’Arabe, la Darija et l’Anglais
+
+Mélanger les langues (code-switching) comme le font les clients
+
+S’appuyer sur les documents internes (FAQ, procédures, catalogues PDF)
+
+Qualifier les leads (immobilier, auto, formations…)
+
+Transférer la conversation à un agent humain si besoin
+
+H2 – Pourquoi les entreprises au Maroc choisissent SYLION ?
+
+Crée une grille de 4–6 cartes (comme sur la home) avec :
+
+Activation en 10 minutes
+
+On connecte l’assistant à votre numéro et vos documents sans complexité technique.
+
+Multilingue natif (FR / AR / Darija / EN)
+
+L’assistant comprend les langues réellement parlées par vos clients.
+
+Basé sur vos documents (RAG)
+
+Les réponses viennent de vos FAQ, procédures, PDF, catalogues.
+
+Pas d’hallucination
+
+L’IA ne “devine” pas : elle s’appuie sur ce que vous lui fournissez.
+
+Hébergement Maroc & Europe
+
+Respect des contraintes de sécurité et de localisation des données.
+
+Conversations illimitées
+
+Votre WhatsApp continue de tourner, l’IA absorbe la charge.
+
+H2 – Combien coûte un assistant WhatsApp IA ?
+
+Texte :
+
+SYLION propose une tarification claire, adaptée au marché marocain.
+
+Ajoute un bloc qui résume :
+
+PME Starter – 590 DH / mois
+
+1 numéro, assistant simple, RAG basique.
+
+Business – 990 DH / mois
+
+Jusqu’à 3 numéros, base de connaissances avancée, support prioritaire.
+
+Enterprise – à partir de 2 500 DH / mois
+
+Pour écoles, cliniques, agences auto, groupes et grands comptes.
+
+Ajoute un bouton :
+
+Label : Voir le détail des tarifs
+
+Lien : /pricing
+
+H2 – FAQ (section très importante pour le SEO)
+
+Crée une section FAQ avec 5 questions / réponses, par exemple :
+
+Est-ce obligatoire d’avoir la WhatsApp Business API pour utiliser une IA ?
+
+Oui, pour une intégration propre, scalable et sécurisée, l’API est indispensable.
+
+Combien de temps prend l’activation de l’API ?
+
+Entre 5 et 15 minutes dans la majorité des cas, une fois les documents validés.
+
+Puis-je garder mon numéro actuel ?
+
+Dans de nombreux cas oui, si le numéro peut recevoir un SMS ou un appel pour la validation.
+
+Est-ce légal au Maroc ?
+
+Oui, c’est la solution officielle fournie par Meta pour les entreprises.
+
+L’IA peut-elle répondre en Darija et en mélange FR/Darija ?
+
+Oui, c’est même un des points forts de l’assistant SYLION.
+
+H2 – CTA final : Passez à l’action
+
+À la fin de la page, ajoute un bloc avec :
+
+Un texte court :
+
+Vous voulez activer la WhatsApp Business API et mettre en place un assistant IA 24/7 pour vos clients au Maroc ?
+Réservez un échange avec notre équipe ou testez l’assistant en direct sur WhatsApp.
+
+Deux boutons :
+
+Tester l’assistant sur WhatsApp (lien vers ton numéro / QR code existant)
+
+Demander une démo (lien vers /contact)
+
+3. SEO technique
+
+Meta Title :
+WhatsApp Business API Maroc – Prix, Activation & Automatisation IA (Guide 2025)
+
+Meta Description :
+Découvrez comment activer WhatsApp Business API au Maroc, les prix officiels Meta, les meilleurs providers et comment automatiser vos réponses clients avec une IA 24/7.
+
+Utilise une structure de titres propre :
+
+Un seul <h1>
+
+Plusieurs <h2> pour les grandes sections
+
+<h3> pour les sous-parties techniques (prix, étapes, FAQ, etc.)
+
+Si possible, ajoute un schema.org FAQPage pour la section FAQ (en JSON-LD ou via composant dédié).
+
+Ta mission :
+
+Implémenter cette page complète, stylée, responsive, cohérente avec le reste du site, et optimisée SEO.
+
+Ne rien casser sur les autres pages.
+
+Garder le ton professionnel, pédagogique, expert.
+
+Fin du prompt.
