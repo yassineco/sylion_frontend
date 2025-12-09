@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Check, MessageCircle, Zap, Globe, FileText, Shield, Server, Clock, ChevronDown, ChevronUp, Info } from "lucide-react";
 import { useState, useEffect } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -159,7 +160,7 @@ export default function WhatsappBusinessApiMarocPage() {
                 C'est la solution utilisée par les écoles, agences immobilières, cliniques, centres auto, e-commerce, banques...
               </p>
               <Link href="/contact" data-testid="link-expert">
-                <Button className="rounded-xl bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white hover:opacity-90" data-testid="button-expert">
+                <Button className="rounded-xl bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white hover:opacity-90" data-testid="button-expert" onClick={() => trackEvent({ action: 'cta_click', category: 'whatsapp_api_seo', label: 'whatsapp_api_maroc_demander_demo' })}>
                   Parler à un expert WhatsApp
                 </Button>
               </Link>

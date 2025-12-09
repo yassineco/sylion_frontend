@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Check, Info } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 export default function PricingPage() {
   const plans = [
@@ -137,6 +138,7 @@ export default function PricingPage() {
                       : "bg-white/5 border border-gray-700 text-white hover:bg-white/10"
                   }`}
                   data-testid={`button-select-${plan.tag.toLowerCase()}`}
+                  onClick={() => trackEvent({ action: 'cta_click', category: 'pricing', label: `pricing_${plan.tag.toLowerCase()}_${plan.cta.includes('devis') ? 'devis' : 'demo'}` })}
                 >
                   {plan.cta}
                 </Button>

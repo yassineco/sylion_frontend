@@ -24,6 +24,7 @@ import {
   ExternalLink
 } from "lucide-react";
 import { useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 const faqData = [
   {
@@ -222,7 +223,7 @@ export default function EnterprisePage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/contact" data-testid="link-contact-hero">
-                <Button className="bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] text-white rounded-xl font-semibold hover:opacity-90 gap-2 px-6" data-testid="button-consultation-hero">
+                <Button className="bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] text-white rounded-xl font-semibold hover:opacity-90 gap-2 px-6" data-testid="button-consultation-hero" onClick={() => trackEvent({ action: 'cta_click', category: 'enterprise', label: 'enterprise_consultation_hero' })}>
                   Demander une consultation
                   <ArrowRight className="w-4 h-4" />
                 </Button>
@@ -233,7 +234,7 @@ export default function EnterprisePage() {
                 rel="noopener noreferrer"
                 data-testid="link-whatsapp-hero"
               >
-                <Button className="bg-[#25D366] hover:bg-[#20BD5A] text-white rounded-xl font-semibold gap-2 px-6">
+                <Button className="bg-[#25D366] hover:bg-[#20BD5A] text-white rounded-xl font-semibold gap-2 px-6" onClick={() => trackEvent({ action: 'cta_click', category: 'enterprise', label: 'enterprise_tester_assistant' })}>
                   <MessageCircle className="w-5 h-5" />
                   Tester l'assistant
                 </Button>
@@ -414,7 +415,7 @@ export default function EnterprisePage() {
                 ))}
               </div>
               <Link href="/contact" data-testid="link-contact-offer">
-                <Button className="bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] text-white rounded-xl font-semibold hover:opacity-90 gap-2" data-testid="button-consultation-offer">
+                <Button className="bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] text-white rounded-xl font-semibold hover:opacity-90 gap-2" data-testid="button-consultation-offer" onClick={() => trackEvent({ action: 'cta_click', category: 'enterprise', label: 'enterprise_offre_sur_devis' })}>
                   Demander une consultation
                   <ArrowRight className="w-4 h-4" />
                 </Button>

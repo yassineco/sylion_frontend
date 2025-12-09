@@ -19,6 +19,7 @@ import {
   MessageCircle
 } from "lucide-react";
 import { useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 const faqData = [
   {
@@ -143,13 +144,13 @@ export default function ArchitectureSecuritePage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/contact" data-testid="link-contact-hero">
-                <Button className="bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] text-white rounded-xl font-semibold hover:opacity-90 gap-2 px-6" data-testid="button-expert-hero">
+                <Button className="bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] text-white rounded-xl font-semibold hover:opacity-90 gap-2 px-6" data-testid="button-expert-hero" onClick={() => trackEvent({ action: 'cta_click', category: 'architecture_security', label: 'expert_technique' })}>
                   Parler à un expert technique
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </Link>
               <Link href="/enterprise" data-testid="link-enterprise-hero">
-                <Button variant="outline" className="border-[#F59E0B] text-[#F59E0B] hover:bg-[#F59E0B]/10 rounded-xl font-semibold gap-2 px-6">
+                <Button variant="outline" className="border-[#F59E0B] text-[#F59E0B] hover:bg-[#F59E0B]/10 rounded-xl font-semibold gap-2 px-6" onClick={() => trackEvent({ action: 'cta_click', category: 'architecture_security', label: 'voir_offre_enterprise' })}>
                   Voir l'offre Enterprise
                 </Button>
               </Link>

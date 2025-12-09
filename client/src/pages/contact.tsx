@@ -4,6 +4,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Link } from "wouter";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -16,6 +17,7 @@ export default function ContactPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
+    trackEvent({ action: 'form_submit', category: 'contact', label: 'contact_whatsapp_demo' });
     alert("Merci ! Notre équipe vous contactera sous 24h en Français ou Darija.");
     setFormData({ name: "", email: "", company: "", message: "" });
   };

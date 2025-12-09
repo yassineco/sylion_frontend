@@ -5,6 +5,7 @@ import FloatingOrbs from "./backgrounds/FloatingOrbs";
 import { motion } from "framer-motion";
 import { MessageCircle, Play, Clock, Users, CheckCircle } from "lucide-react";
 import logoUrl from "@assets/sylion-logo.png";
+import { trackEvent } from "@/lib/analytics";
 
 export default function Hero() {
   return (
@@ -100,6 +101,7 @@ export default function Hero() {
               size="lg" 
               className="rounded-full bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white hover:opacity-90 transition-all hover:scale-105 px-8 py-7 text-lg shadow-lg shadow-[#25D366]/50"
               data-testid="button-demo"
+              onClick={() => trackEvent({ action: 'cta_click', category: 'demo', label: 'hero_demarrer_en_10_minutes' })}
             >
               <MessageCircle className="w-5 h-5 mr-2" />
               Démarrer en 10 minutes
@@ -111,6 +113,7 @@ export default function Hero() {
               variant="outline"
               className="rounded-full border-2 border-white/20 bg-white/5 backdrop-blur-sm text-white hover:bg-white/10 transition-all hover:scale-105 px-8 py-7 text-lg"
               data-testid="button-discover"
+              onClick={() => trackEvent({ action: 'cta_click', category: 'navigation', label: 'hero_voir_comment_ca_marche' })}
             >
               <Play className="w-5 h-5 mr-2" />
               Voir comment ça marche

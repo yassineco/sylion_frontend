@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Check, MessageCircle, ArrowRight, Building2, GraduationCap, Stethoscope, UtensilsCrossed, Car, ChevronDown, ChevronUp, ExternalLink } from "lucide-react";
 import { useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 const faqData = [
   {
@@ -142,7 +143,7 @@ export default function AssistantWhatsAppMarocPage() {
               rel="noopener noreferrer"
               data-testid="link-whatsapp-demo-1"
             >
-              <Button className="bg-[#25D366] hover:bg-[#20BD5A] text-white rounded-xl font-semibold gap-2">
+              <Button className="bg-[#25D366] hover:bg-[#20BD5A] text-white rounded-xl font-semibold gap-2" onClick={() => trackEvent({ action: 'cta_click', category: 'assistant_whatsapp_seo', label: 'assistant_maroc_tester_assistant' })}>
                 <MessageCircle className="w-5 h-5" />
                 Tester l'assistant sur WhatsApp
               </Button>

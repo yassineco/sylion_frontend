@@ -1,0 +1,311 @@
+Tu es l’IA de Replit qui travaille sur le site marketing dark/premium de SYLION (Assistant WhatsApp IA).
+
+🎯 Objectif de cette tâche :
+Intégrer **Google Analytics 4 (GA4)** et ajouter des **événements de tracking** sur les principales actions (CTA, vues pages clés, formulaires).
+
+Le projet est en Next.js (thème dark), avec pages : Home, /pricing, /enterprise, /assistant-whatsapp-maroc, /whatsapp-business-api-maroc, /integration-crm-workflows, /architecture-securite, /contact, etc.
+
+Merci de réaliser les modifications suivantes de manière propre et typée TypeScript.
+
+---
+
+## 1. Variable d’environnement GA4
+
+1) Ajoute dans le fichier d’example d’ENV (par ex. `.env.example` ou similaire) une ligne :
+
+   NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+
+2) Utilise la variable suivante dans le code :
+   `process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID`
+
+Ne mets pas de valeur réelle, juste le placeholder.
+
+---
+
+## 2. Fichier utilitaire analytics
+
+Crée un fichier :
+
+- si le projet a un dossier `src/lib`, utilise : `src/lib/analytics.ts`
+- sinon, utilise : `src/utils/analytics.ts`
+
+Contenu TypeScript :
+
+- Exporter la constante :
+
+  ```ts
+  export const GA_MEASUREMENT_ID =
+    process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || '';
+Fonction pour envoyer les pageviews :
+
+ts
+Copier le code
+export const pageview = (url: string) => {
+  if (!GA_MEASUREMENT_ID || typeof window === 'undefined') return;
+  (window as any).gtag?.('config', GA_MEASUREMENT_ID, {
+    page_path: url,
+  });
+};
+Fonction générique d’event :
+
+ts
+Copier le code
+type GAEventParams = {
+  action: string;
+  category?: string;
+  label?: string;
+  value?: number;
+};
+
+export const trackEvent = ({ action, category, label, value }: GAEventParams) => {
+  if (!GA_MEASUREMENT_ID || typeof window === 'undefined') return;
+  (window as any).gtag?.('event', action, {
+    event_category: category,
+    event_label: label,
+    value,
+  });
+};
+3. Injection du script GA4 (gtag.js)
+Repère le layout racine du site :
+
+Soit src/app/layout.tsx (App Router),
+
+soit _app.tsx / _document.tsx (Pages Router).
+
+Je pars sur l’hypothèse App Router avec RootLayout.
+
+Importer Script de next/script et GA_MEASUREMENT_ID :
+
+ts
+Copier le code
+import Script from 'next/script';
+import { GA_MEASUREMENT_ID } from '@/lib/analytics'; // adapte le chemin
+Dans le JSX de RootLayout, juste avant la balise </body> (ou dans le return principal), ajouter :
+
+tsx
+Copier le code
+{GA_MEASUREMENT_ID && (
+  <>
+    <Script
+      src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+      strategy="afterInteractive"
+    />
+    <Script id="ga4-init" strategy="afterInteractive">
+      {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${GA_MEASUREMENT_ID}', {
+          page_path: window.location.pathname,
+        });
+      `}
+    </Script>
+  </>
+)}
+4. Tracking automatique des pages (page_view)
+Crée un petit composant AnalyticsListener pour l’App Router :
+
+Fichier : src/components/AnalyticsListener.tsx (ou dossier équivalent).
+
+Contenu :
+
+ts
+Copier le code
+'use client';
+
+import { usePathname, useSearchParams } from 'next/navigation';
+import { useEffect } from 'react';
+import { pageview } from '@/lib/analytics';
+
+export function AnalyticsListener() {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    if (!pathname) return;
+    const url = searchParams?.toString()
+      ? `${pathname}?${searchParams.toString()}`
+      : pathname;
+    pageview(url);
+  }, [pathname, searchParams]);
+
+  return null;
+}
+Dans RootLayout, à l’intérieur de <body> mais en haut de la hiérarchie (par ex. juste après <body> ou dans le layout principal), insère :
+
+tsx
+Copier le code
+<AnalyticsListener />
+(en n’oubliant pas d’importer le composant).
+
+5. Événements sur les CTA principaux
+Nous allons ajouter des trackEvent sur les boutons stratégiques.
+Merci de localiser les composants (ou pages) contenant ces boutons et d’ajouter l’appel dans le onClick.
+
+Utiliser trackEvent importé depuis @/lib/analytics.
+
+5.1. Home / Hero
+Bouton : “Démarrer en 10 minutes”
+Event :
+
+ts
+Copier le code
+onClick={() =>
+  trackEvent({
+    action: 'cta_click',
+    category: 'demo',
+    label: 'hero_demarrer_en_10_minutes',
+  })
+}
+Bouton : “Voir comment ça marche” (si présent) :
+
+ts
+Copier le code
+onClick={() =>
+  trackEvent({
+    action: 'cta_click',
+    category: 'navigation',
+    label: 'hero_voir_comment_ca_marche',
+  })
+}
+5.2. Page /pricing
+Pour chaque bouton Demander une démo des cartes Starter et Business :
+
+ts
+Copier le code
+onClick={() =>
+  trackEvent({
+    action: 'cta_click',
+    category: 'pricing',
+    label: 'pricing_starter_demo', // ou pricing_business_demo
+  })
+}
+Pour le bouton Demander un devis de la carte Enterprise :
+
+ts
+Copier le code
+onClick={() =>
+  trackEvent({
+    action: 'cta_click',
+    category: 'pricing',
+    label: 'pricing_enterprise_devis',
+  })
+}
+5.3. Page /enterprise
+Bouton hero “Demander une consultation” :
+
+ts
+Copier le code
+onClick={() =>
+  trackEvent({
+    action: 'cta_click',
+    category: 'enterprise',
+    label: 'enterprise_consultation_hero',
+  })
+}
+Bouton hero “Tester l’assistant” :
+
+ts
+Copier le code
+onClick={() =>
+  trackEvent({
+    action: 'cta_click',
+    category: 'enterprise',
+    label: 'enterprise_tester_assistant',
+  })
+}
+Bouton dans le bloc “Offre Enterprise (sur devis)” : idem label: 'enterprise_offre_sur_devis'.
+
+5.4. Page /integration-crm-workflows
+Bouton “Parler à un expert CRM” (en haut et en bas) :
+
+ts
+Copier le code
+onClick={() =>
+  trackEvent({
+    action: 'cta_click',
+    category: 'crm_integration',
+    label: 'parler_expert_crm',
+  })
+}
+Bouton “Tester l’assistant” sur cette page :
+
+ts
+Copier le code
+onClick={() =>
+  trackEvent({
+    action: 'cta_click',
+    category: 'crm_integration',
+    label: 'tester_assistant_depuis_crm',
+  })
+}
+5.5. Page /architecture-securite
+Bouton “Parler à un expert technique” :
+
+ts
+Copier le code
+onClick={() =>
+  trackEvent({
+    action: 'cta_click',
+    category: 'architecture_security',
+    label: 'expert_technique',
+  })
+}
+Bouton “Voir l’offre Enterprise” :
+
+ts
+Copier le code
+onClick={() =>
+  trackEvent({
+    action: 'cta_click',
+    category: 'architecture_security',
+    label: 'voir_offre_enterprise',
+  })
+}
+5.6. Pages SEO (/assistant-whatsapp-maroc, /whatsapp-business-api-maroc)
+Ajoute également des events sur les CTA principaux :
+
+category: 'assistant_whatsapp_seo' ou category: 'whatsapp_api_seo'
+
+labels :
+
+assistant_maroc_tester_assistant
+
+whatsapp_api_maroc_demander_demo
+
+6. Tracking du formulaire de contact
+Sur la page /contact, localise le formulaire qui envoie le message.
+
+Ajoute un handler sur onSubmit (ou complète le handler existant) :
+
+ts
+Copier le code
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  // logique actuelle d’envoi du formulaire...
+
+  trackEvent({
+    action: 'form_submit',
+    category: 'contact',
+    label: 'contact_whatsapp_demo',
+  });
+};
+Assure-toi que le form utilise bien ce handler :
+
+tsx
+Copier le code
+<form onSubmit={handleSubmit}>
+  {/* champs */}
+</form>
+Si le formulaire est géré autrement, adapte mais conserve l’appel trackEvent.
+
+7. Vérifications & propreté
+Vérifie que chaque fichier TypeScript compile (pas d’erreur de types).
+
+Ne duplique pas les imports de trackEvent / GA_MEASUREMENT_ID.
+
+Conserve le style et les composants existants (Buttons, Card, etc.).
+
+Commente brièvement les nouvelles fonctions pour qu’un autre dev comprenne leur rôle.
+
+Ensuite, donne un récapitulatif des fichiers modifiés et une liste des events disponibles (action / category / label).

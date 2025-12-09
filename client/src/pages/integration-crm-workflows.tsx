@@ -19,6 +19,7 @@ import {
   Phone
 } from "lucide-react";
 import { useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 const faqData = [
   {
@@ -170,7 +171,7 @@ export default function IntegrationCrmWorkflowsPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/contact" data-testid="link-contact-hero">
-                <Button className="bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] text-white rounded-xl font-semibold hover:opacity-90 gap-2 px-6" data-testid="button-expert-hero">
+                <Button className="bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] text-white rounded-xl font-semibold hover:opacity-90 gap-2 px-6" data-testid="button-expert-hero" onClick={() => trackEvent({ action: 'cta_click', category: 'crm_integration', label: 'parler_expert_crm' })}>
                   Parler à un expert CRM
                   <ArrowRight className="w-4 h-4" />
                 </Button>
@@ -181,7 +182,7 @@ export default function IntegrationCrmWorkflowsPage() {
                 rel="noopener noreferrer"
                 data-testid="link-whatsapp-hero"
               >
-                <Button className="bg-[#25D366] hover:bg-[#20BD5A] text-white rounded-xl font-semibold gap-2 px-6">
+                <Button className="bg-[#25D366] hover:bg-[#20BD5A] text-white rounded-xl font-semibold gap-2 px-6" onClick={() => trackEvent({ action: 'cta_click', category: 'crm_integration', label: 'tester_assistant_depuis_crm' })}>
                   <MessageCircle className="w-5 h-5" />
                   Tester l'assistant
                 </Button>
