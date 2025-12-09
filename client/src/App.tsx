@@ -11,6 +11,7 @@ import PricingPage from "@/pages/pricing";
 import ContactPage from "@/pages/contact";
 import WhatsappBusinessApiMarocPage from "@/pages/whatsapp-business-api-maroc";
 import AssistantWhatsAppMarocPage from "@/pages/assistant-whatsapp-maroc";
+import EnterprisePage from "@/pages/enterprise";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -23,6 +24,7 @@ function Router() {
       <Route path="/contact" component={ContactPage} />
       <Route path="/whatsapp-business-api-maroc" component={WhatsappBusinessApiMarocPage} />
       <Route path="/assistant-whatsapp-maroc" component={AssistantWhatsAppMarocPage} />
+      <Route path="/enterprise" component={EnterprisePage} />
       <Route component={NotFound} />
     </Switch>
   );

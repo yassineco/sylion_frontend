@@ -1,0 +1,267 @@
+Tu es l’IA de Replit travaillant sur le site marketing premium de SYLION – Assistant WhatsApp IA.
+Le site utilise une charte “dark premium” avec accents violet/vert, cohérente sur toutes les pages.
+
+🎯 Objectif :
+Créer une nouvelle page Enterprise destinée aux grands comptes marocains (banques, assurances, écoles, cliniques, centres auto, groupes immobiliers).
+Cette page doit :
+
+Positionner SYLION comme solution IA professionnelle, scalable et sécurisée
+
+Compléter le pricing Business/Starter
+
+Être cohérente avec le style actuel du site
+
+Ajouter un lien “Enterprise” dans la navbar
+
+Avoir un ton sérieux et crédible (pas marketing cheap)
+
+Intégrer CTA vers la démo WhatsApp + prise de contact
+
+Être optimisée SEO pour “solution WhatsApp IA entreprise”, “assistant WhatsApp grands comptes Maroc”, “automatisation WhatsApp entreprise”, etc.
+
+Crée une nouvelle page :
+
+Si Next.js App Router : src/app/enterprise/page.tsx
+
+Sinon : src/pages/Enterprise.tsx
+
+Ajoute un meta title et une meta description.
+
+🔥 Structure complète de la page Enterprise
+
+Respecte exactement la structure suivante.
+
+🟪 H1 — Hero Section
+
+Solution WhatsApp IA pour Grands Comptes au Maroc
+
+Sous-texte :
+
+Automatisation intelligente, sécurité avancée, hébergement dédié, multi-numéros, intégration CRM et SLA premium.
+Une plateforme IA WhatsApp conçue pour les écoles, cliniques, banques, assurances, groupes auto et grandes PME marocaines.
+
+Deux boutons :
+
+Demander une consultation → /contact
+
+Tester l’assistant sur WhatsApp → lien démo
+
+Badge : Solution Enterprise 2025
+
+🟩 H2 — Pourquoi les grands comptes passent à WhatsApp IA ?
+
+Paragraphe :
+
+Les organisations marocaines gèrent des milliers de conversations WhatsApp chaque mois : demandes d’information, admissions, rendez-vous, réclamations, fiches produits, financement, support…
+
+Les équipes support ne peuvent pas absorber ce volume 24h/24, et les bots scriptés ne suffisent plus pour répondre naturellement en FR/AR/Darija.
+
+Les grands comptes adoptent désormais des assistants IA capables de comprendre le langage naturel, d’utiliser des documents internes (RAG), de qualifier les demandes, et d’offrir un support continu.
+
+Inclure un mini-stats triad :
+
++40% efficacité support
+
+24/7 disponibilité
+
+99% précision sur documents internes
+
+🟪 H2 — Fonctionnalités avancées pour les grandes organisations
+
+Affiche sous forme de cartes (3x2) :
+
+Hébergement dédié Maroc ou Europe
+
+Données isolées, infrastructure conforme, sécurité renforcée.
+
+Multi-numéros & multi-équipes
+
+Support WhatsApp pour plusieurs filiales, départements ou agences.
+
+SLA prioritaire + support dédié
+
+Accompagnement FR/Darija, astreinte entreprise, résolution rapide.
+
+Intégrations CRM & outils internes
+
+Connecteurs pour Salesforce, HubSpot, Dynamics, Odoo, systèmes internes via API.
+
+RAG multi-documents
+
+Base de connaissances IA alimentée par vos PDF, procédures, catalogues, offres, processus internes.
+
+Workflows IA personnalisés
+
+Qualification automatique, escalade intelligente, transfert aux agents humains.
+
+🟩 H2 — Architecture professionnelle SYLION (version grand compte)
+
+Section en 4 blocs :
+
+Isolation par tenant
+
+Chaque organisation possède son espace sécurisé, ses logs, sa base RAG, ses numéros WhatsApp et ses clés.
+
+Scalabilité Workers + Queue
+
+Architecture distribuée capable de traiter des milliers de messages simultanés.
+
+Monitoring & observabilité
+
+Tableau de bord, logs conversationnels, consommation tokens, alertes.
+
+Sécurité & conformité
+
+Chiffrement, gestion permissions, audit, rotation clés API.
+
+🟪 H2 — Cas d’usage Enterprise
+
+Créer une grille de 5 sections :
+
+Écoles & Groupes Éducatifs
+
+Réponses aux questions des parents, inscriptions, frais, orientation, documents PDF.
+
+Cliniques & Centres médicaux
+
+Spécialités, horaires, pré-qualification, orientation patient, procédures internes.
+
+Groupes immobiliers
+
+Qualification leads, demandes de visite, envoi fiches PDF, disponibilité, localisation.
+
+Agences auto & Leasing
+
+Modèles, prix, financement, collecte leads chauds, prise de RDV showroom.
+
+Banques / Assurances
+
+Préqualification client, documentation, FAQ réglementaire, parcours d’éligibilité.
+
+🟩 H2 — Résultats pour les grands comptes
+
+3 KPIs présentés en blocs :
+
+x10 capacité de traitement sans recruter
+
+70% des demandes traitées automatiquement
+
+-50% de charge sur équipes support
+
+Zéro message perdu même en pic de charge
+
+Réduction frauduleuse via IA RAG (documents internes uniquement)
+
+🟪 H2 — Notre engagement Enterprise
+
+Liste de garanties :
+
+Support FR/Darija dédié
+
+SLA prioritaire (délais garantis)
+
+Mise en production encadrée
+
+Formation équipes
+
+Gestion multi-environnements (pré-prod / prod)
+
+Contrat annuel ou mensuel modulable
+
+Contrat de confidentialité, audit, conformité
+
+Assistance onboarding WhatsApp API
+
+🟩 H2 — Offre Enterprise (sur devis)
+
+Bloc pricing premium (sans prix) :
+
+Titre : Sur devis — adapté à vos volumes et intégrations
+
+Liste :
+
+Nombre de numéros WhatsApp illimité
+
+RAG multi-équipes
+
+Intégrations CRM/ERP/API
+
+Accompagnement sur mesure
+
+Monitoring avancé
+
+Hébergement dédié Maroc/UE
+
+SLA renforcé + support prioritaire
+
+Workflows IA personnalisés
+
+Développements spécifiques
+
+Bouton : Demander une consultation
+
+🟪 H2 — Processus projet Enterprise
+
+3 étapes premium en timeline horizontale :
+
+1️⃣ Audit & cadrage
+
+Analyse de votre activité, cartographie des cas d’usage WhatsApp.
+
+2️⃣ Mise en place & intégration
+
+Configuration WhatsApp API, IA, RAG, workflows, connecteurs.
+
+3️⃣ Déploiement & amélioration continue
+
+Monitoring, optimisation, formation, reporting.
+
+🟩 H2 — FAQ Enterprise
+
+Créer une section FAQ avec accordeon :
+
+Q1 — Quelle est la différence entre l’offre Business et Enterprise ?
+A — L’offre Enterprise inclut : multi-numéros illimités, intégrations avancées, SLA, support prioritaire, hébergement dédié et développement sur mesure.
+
+Q2 — Pouvez-vous déployer un assistant IA pour plusieurs filiales / agences ?
+A — Oui, c’est un cas d’usage courant (groupes auto, écoles multi-sites, assurances, immobilier).
+
+Q3 — Est-ce sécurisé pour les données sensibles ?
+A — Oui, avec isolation par tenant, chiffrement, hébergement dédié et gouvernance des accès.
+
+Q4 — Pouvez-vous travailler avec nos équipes IT internes ?
+A — Oui, nous intégrons vos règles de sécurité, API internes et processus validation.
+
+Q5 — Comment est structuré le devis Enterprise ?
+A — Setup + abonnement mensuel, selon volume, complexité, intégrations et SLA.
+
+Inclure Schema.org FAQPage.
+
+CTA final
+
+Texte :
+
+Vous êtes une école, un groupe, une clinique, une banque, une assurance ou une grande PME ?
+Passez à l’automatisation WhatsApp IA avec une solution sécurisée, évolutive et adaptée au marché marocain.
+
+Deux boutons :
+
+Demander une consultation → /contact
+
+Tester l’assistant sur WhatsApp
+
+🔧 Tâches techniques finales
+
+Ajouter le lien Enterprise dans la navbar
+
+Vérifier que la page s'adapte bien en mobile
+
+Garder le thème dark premium cohérent
+
+Inclure du maillage interne :
+
+vers /pricing
+
+vers /whatsapp-business-api-maroc
+
+vers /assistant-whatsapp-maroc

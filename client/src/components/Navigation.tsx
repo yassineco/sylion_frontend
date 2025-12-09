@@ -10,6 +10,7 @@ export default function Navigation() {
     { href: "/products", label: "Produits" },
     { href: "/services", label: "Services" },
     { href: "/pricing", label: "Tarifs" },
+    { href: "/enterprise", label: "Enterprise" },
     { href: "/assistant-whatsapp-maroc", label: "Assistant IA" },
     { href: "/whatsapp-business-api-maroc", label: "WhatsApp API" },
     { href: "/contact", label: "Contact" },
