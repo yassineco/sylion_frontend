@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Navigation from "@/components/Navigation";
 import { AnalyticsListener } from "@/components/AnalyticsListener";
-import HomePage from "@/pages/home";
+import HomeNewPage from "@/pages/home-new";
 import ProductsPage from "@/pages/products";
 import ServicesPage from "@/pages/services";
 import PricingPage from "@/pages/pricing";
@@ -20,7 +20,7 @@ import NotFound from "@/pages/not-found";
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={HomePage} />
+      <Route path="/" component={HomeNewPage} />
       <Route path="/products" component={ProductsPage} />
       <Route path="/services" component={ServicesPage} />
       <Route path="/pricing" component={PricingPage} />
