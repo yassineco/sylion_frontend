@@ -1,0 +1,73 @@
+Tu es un développeur senior front-end. Objectif : améliorer la section Pricing de SYLION sans casser l’identité visuelle ni la mise en page actuelle.
+
+CONTEXTE IMPORTANT (À RESPECTER STRICTEMENT)
+- Le prix du plan Starter est désormais fixé à **399 DH / mois** (et non 790 DH).
+- Le prix du plan Business reste à **1 490 DH / mois**.
+- Le prix Enterprise reste “À partir de 4 900 DH / mois”.
+- Ces prix sont définitifs pour cette itération.
+
+CONTRAINTES NON NÉGOCIABLES
+- Ne change PAS la police, les tailles globales, les couleurs, le layout (3 cartes), ni le logo/menu.
+- Ne supprime AUCUN élément existant. Ajoute uniquement.
+- Le style doit rester exactement dans le thème sombre actuel (mêmes classes, même design system).
+- Pas de refactor massif : modification minimale, ciblée, propre.
+- Pas de nouveaux frameworks. Utilise la stack existante (Next/React + CSS/Tailwind ou équivalent déjà en place).
+
+OBJECTIF PRODUIT
+1) Mettre à jour le prix du plan Starter à **399 DH / mois** sur la carte correspondante.
+2) Ajouter “un peu plus d’infos” par offre, mais SANS chiffres techniques (pas de tokens, pas de X messages, pas de quotas bruts).
+3) Garder une formulation orientée “usage” (modéré / intensif / organisations).
+4) Ajouter un lien “Voir les limites & détails” sous chaque offre qui ouvre l’assistant SYLION (ou un modal/FAQ si l’assistant n’est pas encore branché).
+5) Garder “Conversations illimitées*” mais ajouter une micro-explication claire et rassurante (usage raisonnable + règles WhatsApp) sans jargon.
+6) Préparer une mini-FAQ (3 questions) sous les cartes (collapsible/accordion léger), toujours sans chiffres.
+
+TEXTES À AJOUTER (exactement, sans réécriture lourde)
+Sous le texte descriptif de chaque carte, ajoute une ligne courte (style “caption” discret) :
+
+Starter :
+- "Pour un usage modéré : automatisation simple, FAQ de base, premiers scénarios."
+
+Business :
+- "Pour un usage intensif : réponses plus avancées, RAG sur vos documents, optimisation continue."
+
+Enterprise :
+- "Pour des organisations : multi-équipes, intégrations avancées, SLA et environnements dédiés."
+
+AJOUTER UN LIEN DISCRET PAR CARTE
+- Lien texte (petit, sous la liste) : "Voir les limites & détails"
+- Au clic :
+   - si une route /assistant ou /support existe : rediriger vers cette route avec un paramètre plan=starter|business|enterprise
+   - sinon : ouvrir un modal simple “Détails & limites” (contenu ci-dessous)
+
+CONTENU MODAL “Détails & limites” (sans chiffres)
+Titre : "Détails & limites — {Nom de l’offre}"
+Contenu (3 bullets max) :
+- "Les conversations se font dans le respect des règles WhatsApp Business API (Meta / 360dialog)."
+- "Usage raisonnable : conçu pour un usage normal d’entreprise, sans comportements abusifs."
+- "En cas de volume exceptionnel, on vous prévient et on vous propose l’offre la plus adaptée."
+
+AJOUTER UNE NOTE ASTÉRISQUE À “Conversations illimitées*”
+Sous la liste du plan Business, affiche une note en bas de carte (style très discret) :
+"*Illimitées dans le respect des règles WhatsApp Business API et d’un usage raisonnable."
+
+MINI-FAQ SOUS LA SECTION PRICING (Accordion léger)
+Titre : "Questions fréquentes"
+Items :
+1) "Y a-t-il un engagement ?"
+   Réponse : "Non. Vous pouvez arrêter à tout moment. On vous aide à exporter vos infos si besoin."
+2) "Est-ce que je risque une facture surprise ?"
+   Réponse : "Non. Les limites et options sont clarifiées avant toute activation. Aucun dépassement silencieux."
+3) "Je n’ai pas 360dialog, vous pouvez vous en occuper ?"
+   Réponse : "Oui. Le pack d’activation couvre la mise en place 360dialog / Meta, la configuration et les tests."
+
+ACCEPTANCE CRITERIA (tests visuels)
+- La page ne doit pas scroller significativement plus qu’avant (ajouts compacts).
+- Aucun décalage des cartes (hauteurs harmonisées si possible via flex).
+- Mobile responsive inchangé (ou amélioré sans redesign).
+- Aucun prix incohérent affiché (Starter = 399 DH / mois).
+- Aucune régression sur CTA “Demander une démo” / “Demander un devis”.
+- Le modal/accordion doit être accessible (focus, ESC pour fermer si modal).
+
+LIVRABLE
+- Fais un commit unique : "feat(pricing): update starter price to 399dh + clarify plan positioning"
+- Donne-moi le nom des fichiers modifiés et un résumé en 5 lignes de ce qui a été ajouté.

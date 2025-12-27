@@ -1,16 +1,33 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { Check, Info, Zap } from "lucide-react";
+import { Check, Info, Zap, ChevronDown, X } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function PricingPage() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+
   const plans = [
     {
       name: "Starter",
       tag: "Starter",
-      price: "790 DH",
+      price: "399 DH",
       period: "/mois",
       description: "Pour démarrer sérieusement avec un Assistant WhatsApp IA sans faire de compromis.",
+      usage: "Pour un usage modéré : automatisation simple, FAQ de base, premiers scénarios.",
       features: [
         "1 numéro WhatsApp Business API",
         "Assistant IA multilingue (FR / AR / Darija)",
@@ -27,6 +44,7 @@ export default function PricingPage() {
       price: "1 490 DH",
       period: "/mois",
       description: "Le plan idéal pour les PME qui veulent automatiser sérieusement WhatsApp.",
+      usage: "Pour un usage intensif : réponses plus avancées, RAG sur vos documents, optimisation continue.",
       features: [
         "Conversations illimitées*",
         "Assistant IA avancé (FR / AR / Darija / EN)",
@@ -38,7 +56,7 @@ export default function PricingPage() {
       popular: true,
       cta: "Demander une démo",
       color: "#4F46E5",
-      note: "*Sous réserve des limites de la WhatsApp Business API et du fournisseur (360dialog / Meta).",
+      asteriskNote: "*Illimitées dans le respect des règles WhatsApp Business API et d'un usage raisonnable.",
     },
     {
       name: "Enterprise",
@@ -46,6 +64,7 @@ export default function PricingPage() {
       price: "À partir de 4 900 DH",
       period: "/mois",
       description: "Pour écoles, cliniques, groupes, banques, assurances et grandes structures.",
+      usage: "Pour des organisations : multi-équipes, intégrations avancées, SLA et environnements dédiés.",
       features: [
         "Hébergement dédié (Maroc ou Europe)",
         "Multi-numéros WhatsApp",
@@ -59,6 +78,26 @@ export default function PricingPage() {
       note: "Tarification sur devis, ajustée selon vos volumes, intégrations et exigences de SLA.",
     },
   ];
+
+  const faqItems = [
+    {
+      question: "Y a-t-il un engagement ?",
+      answer: "Non. Vous pouvez arrêter à tout moment. On vous aide à exporter vos infos si besoin.",
+    },
+    {
+      question: "Est-ce que je risque une facture surprise ?",
+      answer: "Non. Les limites et options sont clarifiées avant toute activation. Aucun dépassement silencieux.",
+    },
+    {
+      question: "Je n'ai pas 360dialog, vous pouvez vous en occuper ?",
+      answer: "Oui. Le pack d'activation couvre la mise en place 360dialog / Meta, la configuration et les tests.",
+    },
+  ];
+
+  const openModal = (planName: string) => {
+    setSelectedPlan(planName);
+    setModalOpen(true);
+  };
 
   return (
     <main className="min-h-screen bg-[#0B0B0B] text-white overflow-x-hidden">
@@ -87,7 +126,7 @@ export default function PricingPage() {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative p-8 rounded-2xl border transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl ${
+              className={`relative p-8 rounded-2xl border transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl flex flex-col ${
                 plan.popular
                   ? "border-[#4F46E5] bg-gradient-to-b from-[#4F46E5]/10 via-[#4F46E5]/5 to-transparent shadow-lg shadow-[#4F46E5]/10"
                   : "border-gray-800 bg-[#111111] hover:border-gray-700"
@@ -118,7 +157,7 @@ export default function PricingPage() {
                 {plan.period && <span className="text-gray-400 text-sm ml-1">{plan.period}</span>}
               </div>
 
-              <ul className="space-y-3 mb-6">
+              <ul className="space-y-3 mb-4 flex-1">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
                     <Check 
@@ -130,9 +169,23 @@ export default function PricingPage() {
                 ))}
               </ul>
 
-              {plan.note && (
-                <p className="text-xs text-gray-500 mb-6 leading-relaxed">{plan.note}</p>
+              <p className="text-xs text-gray-500 italic mb-4 leading-relaxed">{plan.usage}</p>
+
+              {plan.asteriskNote && (
+                <p className="text-xs text-gray-500 mb-4 leading-relaxed">{plan.asteriskNote}</p>
               )}
+
+              {plan.note && (
+                <p className="text-xs text-gray-500 mb-4 leading-relaxed">{plan.note}</p>
+              )}
+
+              <button
+                onClick={() => openModal(plan.name)}
+                className="text-xs text-gray-400 hover:text-white underline underline-offset-2 mb-4 text-left transition-colors"
+                data-testid={`link-details-${plan.tag.toLowerCase()}`}
+              >
+                Voir les limites & détails
+              </button>
 
               <Link href="/contact" data-testid={`link-select-${plan.tag.toLowerCase()}`}>
                 <Button
@@ -149,6 +202,28 @@ export default function PricingPage() {
               </Link>
             </div>
           ))}
+        </div>
+
+        <div className="mt-16">
+          <h3 className="text-2xl font-bold text-center mb-8">Questions fréquentes</h3>
+          <div className="max-w-2xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-3">
+              {faqItems.map((item, index) => (
+                <AccordionItem 
+                  key={index} 
+                  value={`item-${index}`}
+                  className="border border-gray-800 rounded-xl bg-[#111111] px-6 overflow-hidden"
+                >
+                  <AccordionTrigger className="text-left text-white hover:no-underline py-4" data-testid={`faq-trigger-${index}`}>
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-400 pb-4">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </div>
 
         <div className="mt-12 p-6 md:p-8 rounded-2xl bg-gradient-to-b from-[#25D366]/5 to-transparent border border-[#25D366]/30" data-testid="section-pack-activation">
@@ -222,6 +297,40 @@ export default function PricingPage() {
           </div>
         </div>
       </div>
+
+      <Dialog open={modalOpen} onOpenChange={setModalOpen}>
+        <DialogContent className="bg-[#111111] border-gray-800 text-white max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-xl font-bold">
+              Détails & limites — {selectedPlan}
+            </DialogTitle>
+          </DialogHeader>
+          <ul className="space-y-4 mt-4">
+            <li className="flex items-start gap-3">
+              <Check className="w-5 h-5 text-[#4F46E5] flex-shrink-0 mt-0.5" />
+              <span className="text-sm text-gray-300">Les conversations se font dans le respect des règles WhatsApp Business API (Meta / 360dialog).</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <Check className="w-5 h-5 text-[#4F46E5] flex-shrink-0 mt-0.5" />
+              <span className="text-sm text-gray-300">Usage raisonnable : conçu pour un usage normal d'entreprise, sans comportements abusifs.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <Check className="w-5 h-5 text-[#4F46E5] flex-shrink-0 mt-0.5" />
+              <span className="text-sm text-gray-300">En cas de volume exceptionnel, on vous prévient et on vous propose l'offre la plus adaptée.</span>
+            </li>
+          </ul>
+          <div className="mt-6">
+            <Link href="/contact">
+              <Button 
+                className="w-full bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] text-white rounded-xl"
+                onClick={() => setModalOpen(false)}
+              >
+                Nous contacter
+              </Button>
+            </Link>
+          </div>
+        </DialogContent>
+      </Dialog>
     </main>
   );
 }
