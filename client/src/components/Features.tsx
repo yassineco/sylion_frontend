@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { MessageCircle, Database, Globe, FileText, Shield, Brain } from "lucide-react";
+import { MessageCircle, Database, Globe, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Features() {
   const features = [
@@ -70,6 +71,19 @@ export default function Features() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-center mt-10"
+        >
+          <Link href="/cas-d-usages" className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors" data-testid="link-cas-usages">
+            Voir les cas d'usages
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

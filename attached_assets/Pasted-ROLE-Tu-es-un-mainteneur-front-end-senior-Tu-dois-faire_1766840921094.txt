@@ -1,0 +1,41 @@
+ROLE:
+Tu es un mainteneur front-end senior. Tu dois faire une modification MINIMALE sur la homepage sans casser l’identité visuelle.
+
+ABSOLUTE LOCKS (NON NEGOTIABLE):
+- Ne change PAS la police, les couleurs, le background, les gradients, les animations, ni le spacing global.
+- Ne touche PAS au layout du HERO (menu en haut, logo centré, H1 avec "24h/24", 2 CTA, 3 stats) => doit rester visuellement identique.
+- Ne refactorise pas les composants existants (ne pas renommer, ne pas déplacer).
+- N’ajoute aucune librairie.
+- Objectif: DIFF MINIMAL, le moins de fichiers possible.
+
+TASK (HOMEPAGE ONLY):
+1) Ouvrir la page d’accueil actuelle (app/page.tsx ou pages/index.tsx selon le projet).
+2) Identifier la section qui correspond à :
+   - Titre: "Pourquoi les entreprises choisissent SYLIONAI"
+   - Sous-titre: "Solutions adaptées à chaque secteur"
+   - Chips/badges: Immobilier, Formation, Santé, Restauration, Auto & Leasing, etc.
+3) SUPPRIMER cette section de la homepage (retirer son rendu).
+4) Vérifier que les sections suivantes restent en place et inchangées visuellement:
+   - HERO
+   - "Pour qui est fait SYLIONAI ?" (les 2 cartes 360dialog)
+   - "Ce que SYLIONAI fait pour vous" (les 3 cartes features)
+5) OPTIONNEL MAIS RECOMMANDE (si facile sans casser le design):
+   - Créer une page dédiée pour recycler cette section telle quelle (mêmes composants, mêmes styles):
+     - route: /cas-d-usages (App Router: app/cas-d-usages/page.tsx ; Pages Router: pages/cas-d-usages.tsx)
+     - y rendre EXACTEMENT la section supprimée (même titre, sous-titre, mêmes chips)
+   - Ajouter un lien discret vers cette page depuis la homepage (dans la section "Ce que SYLIONAI fait pour vous" en bas):
+     - texte du lien: "Voir les cas d’usages →"
+     - utiliser un <Link> Next.js avec les classes existantes (pas de nouveau style inventé).
+   - IMPORTANT: si tu n’es pas sûr des styles existants, ne crée pas de nouveaux styles: réutilise les classes d’un lien déjà présent (ex: "Voir comment ça marche").
+
+OUTPUT RULES:
+- Fournir uniquement le code final des fichiers modifiés.
+- Modifier le minimum de fichiers nécessaires.
+- Build doit compiler, pas d’imports inutilisés.
+- Aucune explication.
+
+FINAL CHECKLIST:
+- Le HERO est identique.
+- La homepage scrolle moins.
+- La section "Pourquoi les entreprises choisissent SYLIONAI" n’apparaît plus sur la homepage.
+- Si la page /cas-d-usages est créée, elle compile et affiche la section recyclée sans nouveau design.
