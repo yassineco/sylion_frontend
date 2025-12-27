@@ -67,6 +67,15 @@ export default function ContactPage() {
             </p>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
+                <div className="w-6 h-6 flex-shrink-0 mt-1 flex items-center justify-center">
+                  <span className="text-[#4F46E5] font-bold text-sm">S</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-1">Entreprise</h3>
+                  <p className="text-gray-400">SYLION TECH (SARL AU)</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
                 <Mail className="w-6 h-6 text-[#4F46E5] flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold mb-1">Email</h3>
@@ -96,7 +105,7 @@ export default function ContactPage() {
                 <MapPin className="w-6 h-6 text-[#4F46E5] flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold mb-1">Adresse</h3>
-                  <p className="text-gray-400">Casablanca, Maroc</p>
+                  <p className="text-gray-400">2 RUE ESSANAOUBAR, ÉTAGE 4, APPARTEMENT 12, Casablanca – Maroc</p>
                 </div>
               </div>
             </div>
@@ -183,6 +192,17 @@ export default function ContactPage() {
                 </Button>
               </form>
             )}
+          </div>
+        </div>
+        
+        {/* Mentions légales */}
+        <div className="mt-16 pt-8 border-t border-gray-800">
+          <h4 className="text-sm font-semibold text-gray-500 mb-3">Mentions légales</h4>
+          <div className="text-xs text-gray-600 space-y-1">
+            <p>SYLION TECH – Société à Responsabilité Limitée à Associé Unique (SARL AU)</p>
+            <p>Siège social : 2 RUE ESSANAOUBAR, ÉTAGE 4, APPARTEMENT 12, Casablanca – Maroc</p>
+            <p>RC : 704357 • ICE : 003843338000086</p>
+            <p>Email : contact@sylionai.com</p>
           </div>
         </div>
       </div>
