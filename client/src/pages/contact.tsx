@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Link } from "wouter";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, CheckCircle } from "lucide-react";
 import { useState } from "react";
 import { trackEvent } from "@/lib/analytics";
 
@@ -13,12 +13,39 @@ export default function ContactPage() {
     company: "",
     message: "",
   });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+
+    if (!formData.name || !formData.email || !formData.message) {
+      return;
+    }
+
+    const payload = {
+      name: formData.name,
+      email: formData.email,
+      company: formData.company,
+      message: formData.message,
+    };
+
+    console.log("Form data ready for backend:", payload);
+
+    // TODO: Uncomment when backend is ready
+    // try {
+    //   const response = await fetch('/api/contact', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify(payload),
+    //   });
+    //   if (!response.ok) throw new Error('Network response was not ok');
+    // } catch (error) {
+    //   console.error('Error submitting form:', error);
+    //   return;
+    // }
+
     trackEvent({ action: 'form_submit', category: 'contact', label: 'contact_whatsapp_demo' });
-    alert("Merci ! Notre équipe vous contactera sous 24h en Français ou Darija.");
+    setIsSubmitted(true);
     setFormData({ name: "", email: "", company: "", message: "" });
   };
 
@@ -43,14 +70,26 @@ export default function ContactPage() {
                 <Mail className="w-6 h-6 text-[#4F46E5] flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold mb-1">Email</h3>
-                  <p className="text-gray-400">contact@syliontech.ma</p>
+                  <a 
+                    href="mailto:contact@sylionai.com" 
+                    className="text-gray-400 hover:text-white transition-colors"
+                    data-testid="link-email"
+                  >
+                    contact@sylionai.com
+                  </a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <Phone className="w-6 h-6 text-[#4F46E5] flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold mb-1">Téléphone / WhatsApp</h3>
-                  <p className="text-gray-400">+212 6 00 00 00 00</p>
+                  <a 
+                    href="tel:+212649700830" 
+                    className="text-gray-400 hover:text-white transition-colors"
+                    data-testid="link-phone"
+                  >
+                    +212 6 49 70 08 30
+                  </a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -63,69 +102,87 @@ export default function ContactPage() {
             </div>
           </div>
           <div>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  Nom
-                </label>
-                <Input
-                  id="name"
-                  type="text"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="bg-white/5 border-gray-700 text-white"
-                  required
-                  data-testid="input-name"
-                />
+            {isSubmitted ? (
+              <div className="flex flex-col items-center justify-center h-full text-center p-8 rounded-2xl bg-white/5 border border-gray-800">
+                <CheckCircle className="w-16 h-16 text-[#25D366] mb-4" />
+                <h3 className="text-2xl font-bold mb-2">Merci !</h3>
+                <p className="text-gray-400">
+                  Votre demande a bien été enregistrée. Nous vous recontacterons rapidement.
+                </p>
+                <Button
+                  onClick={() => setIsSubmitted(false)}
+                  variant="ghost"
+                  className="mt-6 text-[#4F46E5] hover:bg-white/10"
+                  data-testid="button-new-request"
+                >
+                  Nouvelle demande
+                </Button>
               </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
-                  Email
-                </label>
-                <Input
-                  id="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="bg-white/5 border-gray-700 text-white"
-                  required
-                  data-testid="input-email"
-                />
-              </div>
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium mb-2">
-                  Entreprise
-                </label>
-                <Input
-                  id="company"
-                  type="text"
-                  value={formData.company}
-                  onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                  className="bg-white/5 border-gray-700 text-white"
-                  data-testid="input-company"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
-                  Message
-                </label>
-                <Textarea
-                  id="message"
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="bg-white/5 border-gray-700 text-white min-h-32"
-                  required
-                  data-testid="input-message"
-                />
-              </div>
-              <Button
-                type="submit"
-                className="w-full rounded-2xl bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] text-white hover:opacity-90"
-                data-testid="button-submit"
-              >
-                Demander une démo WhatsApp
-              </Button>
-            </form>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium mb-2">
+                    Nom
+                  </label>
+                  <Input
+                    id="name"
+                    type="text"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="bg-white/5 border-gray-700 text-white"
+                    required
+                    data-testid="input-name"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2">
+                    Email
+                  </label>
+                  <Input
+                    id="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="bg-white/5 border-gray-700 text-white"
+                    required
+                    data-testid="input-email"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="company" className="block text-sm font-medium mb-2">
+                    Entreprise
+                  </label>
+                  <Input
+                    id="company"
+                    type="text"
+                    value={formData.company}
+                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                    className="bg-white/5 border-gray-700 text-white"
+                    data-testid="input-company"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium mb-2">
+                    Message
+                  </label>
+                  <Textarea
+                    id="message"
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className="bg-white/5 border-gray-700 text-white min-h-32"
+                    required
+                    data-testid="input-message"
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  className="w-full rounded-2xl bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] text-white hover:opacity-90"
+                  data-testid="button-submit"
+                >
+                  Demander une démo WhatsApp
+                </Button>
+              </form>
+            )}
           </div>
         </div>
       </div>

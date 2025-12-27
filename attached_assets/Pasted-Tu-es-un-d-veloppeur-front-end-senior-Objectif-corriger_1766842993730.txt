@@ -1,0 +1,69 @@
+Tu es un développeur front-end senior. Objectif : corriger les informations de contact affichées sur la page /contact ET préparer le formulaire pour une future connexion backend, sans implémenter d’envoi d’email pour le moment.
+
+CONTEXTE IMPORTANT (À RESPECTER STRICTEMENT)
+- Le backend SYLION sera déployé plus tard.
+- Le formulaire NE DOIT PAS envoyer d’email actuellement.
+- Les informations de contact affichées doivent être mises à jour.
+- L’adresse email officielle de contact est désormais :
+  → contact@sylionai.com
+- Le numéro Téléphone / WhatsApp officiel est :
+  → +212 6 49 70 08 30
+- L’adresse physique reste :
+  → Casablanca, Maroc
+
+CONTRAINTES NON NÉGOCIABLES
+- Ne change PAS la mise en page, le layout, les espacements ou la typographie.
+- Ne change PAS les couleurs, icônes, styles ou composants UI existants.
+- Ne supprime aucun champ du formulaire.
+- Ne modifie PAS le texte du bouton ("Demander une démo WhatsApp").
+- Pas de refactor massif : remplacement de texte + logique minimale uniquement.
+- Pas de service tiers (EmailJS, Formspree, etc.).
+- Pas de nouvelle dépendance.
+
+OBJECTIFS PRODUIT
+
+1) CORRECTION DES INFOS DE CONTACT (VISUEL)
+- Remplacer tout email affiché par :
+  → contact@sylionai.com
+- Remplacer tout numéro Téléphone / WhatsApp par :
+  → +212 6 49 70 08 30
+- Vérifier que les liens cliquables (mailto / tel / WhatsApp) pointent vers ces nouvelles valeurs.
+- Ne modifier aucun autre texte de la page.
+
+2) COMPORTEMENT DU FORMULAIRE (PHASE ACTUELLE – SANS BACKEND)
+À la soumission du formulaire :
+- Valider les champs requis (Nom, Email, Message).
+- Empêcher la soumission si invalide.
+- Simuler une soumission réussie :
+  afficher un message clair et professionnel :
+  "Merci ! Votre demande a bien été enregistrée. Nous vous recontacterons rapidement."
+- Ne PAS envoyer d’email.
+- Ne PAS appeler de service externe.
+- Optionnel : logger les données dans la console pour debug (console.log).
+
+3) PRÉPARATION POUR LE BACKEND FUTUR
+- Centraliser la logique dans une fonction claire (ex: handleSubmit).
+- Prévoir un emplacement commenté pour un futur appel API :
+  POST /api/contact
+- Structurer le payload comme suit :
+  {
+    name,
+    email,
+    company,
+    message
+  }
+
+CRITÈRES D’ACCEPTATION
+- L’email affiché est exactement : contact@sylionai.com
+- Le numéro affiché est exactement : +212 6 49 70 08 30
+- Aucun email n’est envoyé lors de la soumission.
+- L’utilisateur reçoit un feedback clair après soumission.
+- Aucun changement visuel (layout, spacing, couleurs).
+- Le code est prêt à brancher un backend sans refactor UI.
+- Aucun warning ou erreur de build.
+
+LIVRABLE
+- Commit unique :
+  "chore(contact): update contact info + prepare form for backend"
+- Indique le fichier modifié (ex: Contact.tsx / page.tsx).
+- Résume en 2–3 lignes ce qui a été corrigé.
