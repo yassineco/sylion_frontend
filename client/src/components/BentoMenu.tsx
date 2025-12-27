@@ -1,118 +1,47 @@
 import { motion } from "framer-motion";
-import { BarChart3, Zap, Shield, Workflow, Database, Layers, Rocket } from "lucide-react";
+import { BarChart3, Zap, Shield, Workflow } from "lucide-react";
 
 const menuItems = [
-  {
-    id: 1,
-    title: "Analytics",
-    subtitle: "Dashboard",
-    description: "Suivez les conversations, les temps de réponse et la satisfaction client",
-    icon: BarChart3,
-    span: "col-span-1 row-span-2",
-    gradient: "from-[#4F46E5] to-[#7C3AED]",
-  },
-  {
-    id: 2,
-    title: "CRM",
-    subtitle: "Intégration",
-    description: "Synchronisez avec Salesforce, HubSpot, Zoho...",
-    icon: Layers,
-    span: "col-span-1 row-span-1",
-    gradient: "from-[#7C3AED] to-[#4F46E5]",
-  },
-  {
-    id: 3,
-    title: "Multi-canal",
-    subtitle: "Connecteurs",
-    description: "WhatsApp, Messenger, Instagram, site web...",
-    icon: Zap,
-    span: "col-span-1 row-span-2",
-    gradient: "from-[#4F46E5] to-[#06b6d4]",
-  },
-  {
-    id: 4,
-    title: "Workflows",
-    subtitle: "Automatisation",
-    description: "Escalade vers un humain, notifications, actions automatiques",
-    icon: Workflow,
-    span: "col-span-1 row-span-2",
-    gradient: "from-[#7C3AED] to-[#4F46E5]",
-  },
-  {
-    id: 5,
-    title: "API",
-    subtitle: "Développeurs",
-    description: "Intégrez l'IA dans vos propres applications",
-    icon: Database,
-    span: "col-span-1 row-span-1",
-    gradient: "from-[#06b6d4] to-[#4F46E5]",
-  },
-  {
-    id: 6,
-    title: "Sécurité",
-    subtitle: "Conformité",
-    description: "Données hébergées au Maroc, conformité RGPD",
-    icon: Shield,
-    span: "col-span-1 row-span-1",
-    gradient: "from-[#4F46E5] to-[#7C3AED]",
-  },
+  { icon: BarChart3, title: "Analytics", desc: "Conversations, temps de réponse, satisfaction" },
+  { icon: Zap, title: "Multi-canal", desc: "WhatsApp, Messenger, Instagram, web" },
+  { icon: Workflow, title: "Workflows", desc: "Escalade humain, notifications, automatisations" },
+  { icon: Shield, title: "Sécurité", desc: "Données protégées, conformité RGPD" },
 ];
 
 export default function BentoMenu() {
   return (
-    <section className="relative py-24 px-6 bg-[#0B0B0B] overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#4F46E5]/5 to-transparent" />
-      
-      <div className="relative z-10 max-w-7xl mx-auto">
+    <section className="relative py-16 px-6 bg-[#0B0B0B] overflow-hidden">
+      <div className="relative z-10 max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#4F46E5]/20 to-[#7C3AED]/20 border border-[#4F46E5]/30 backdrop-blur-sm mb-6">
-            <Rocket className="w-4 h-4 text-[#4F46E5]" />
-            <span className="text-sm font-medium text-gray-300">Pour aller plus loin</span>
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
             Modules <span className="bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] bg-clip-text text-transparent">avancés</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            SYLION n'est pas juste un bot WhatsApp. C'est une plateforme IA évolutive pour votre entreprise.
-          </p>
+          <p className="text-gray-400">Plateforme IA évolutive pour votre entreprise</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[180px]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {menuItems.map((item, index) => (
             <motion.div
-              key={item.id}
+              key={item.title}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`${item.span} group relative`}
-              data-testid={`bento-card-${item.id}`}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              className="group"
+              data-testid={`bento-card-${index}`}
             >
-              <div className="relative h-full rounded-xl overflow-hidden bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 backdrop-blur-sm hover-elevate active-elevate-2 transition-all duration-300">
-                {/* Gradient border effect on hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl`} />
-                
-                {/* Content */}
-                <div className="relative h-full p-6 flex flex-col justify-between">
-                  <div>
-                    <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br ${item.gradient} mb-4`}>
-                      <item.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <h3 className="text-xl font-bold text-white mb-1">{item.title}</h3>
-                    <p className="text-sm text-gray-400 mb-2">{item.subtitle}</p>
-                  </div>
-                  <p className="text-sm text-gray-500">{item.description}</p>
+              <div className="h-full p-5 rounded-xl bg-white/5 border border-white/10 hover:border-[#4F46E5]/50 transition-all text-center">
+                <div className="inline-flex p-3 rounded-lg bg-gradient-to-br from-[#4F46E5] to-[#7C3AED] mb-3">
+                  <item.icon className="w-5 h-5 text-white" />
                 </div>
-
-                {/* Glow effect on hover */}
-                <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br ${item.gradient} blur-2xl -z-10`} />
+                <h3 className="text-base font-bold text-white mb-1">{item.title}</h3>
+                <p className="text-xs text-gray-500">{item.desc}</p>
               </div>
             </motion.div>
           ))}

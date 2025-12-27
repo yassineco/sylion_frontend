@@ -1,0 +1,75 @@
+ROLE:
+Tu es un mainteneur front-end senior. Ta mission est de réduire le scroll et d’ajouter le filtre 360dialog SANS AUCUN changement d’identité visuelle.
+
+ABSOLUTE LOCKS (NON NEGOTIABLE):
+1) Conserver EXACTEMENT la disposition du HERO comme sur la capture:
+   - Menu horizontal en haut (Produits, Services, Tarifs, Enterprise, Contact) inchangé
+   - Logo au milieu du HERO (centré) inchangé
+   - Titre principal grand avec "24h/24" mis en avant inchangé
+   - Sous-titre/description inchangés dans le style (tu peux raccourcir le texte, mais pas changer la typo ni les tailles globales)
+   - Deux boutons CTA au centre (gauche: "Démarrer en 10 minutes", droite: "Voir comment ça marche") inchangés
+   - Les 3 métriques (92% / 48% / 99%) restent à la même place
+2) AUCUN changement de:
+   - police / font-family
+   - palette de couleurs / gradients / background
+   - layout, spacing global, animations
+   - composants Header / Navbar / Hero existants
+3) Ne pas ajouter de librairies. Ne pas refactoriser l’architecture.
+
+CONTENT LOCK — CIBLE (IMPORTANT):
+- Supprimer toute mention de:
+  - "TPE marocaine"
+  - "PME marocaine"
+  - références géographiques explicites au Maroc
+- Utiliser UNIQUEMENT les termes:
+  - "TPE"
+  - "sociétés"
+  - "entreprises"
+- Le discours doit rester neutre, internationalisable, sans référence pays.
+
+OBJECTIF:
+- Réduire le scroll total de la page d’accueil d’au moins ~40% en:
+  a) fusionnant des sections redondantes
+  b) remplaçant des paragraphes longs par bullets courts (3 à 5 max)
+  c) déplaçant le détail non essentiel hors de la home (si pages existantes) ou en collapsible UNIQUEMENT si un composant collapsible existe déjà.
+- Ajouter un bloc clair “360dialog” (filtrage) mais SANS perturber le HERO.
+
+AJOUT OBLIGATOIRE (360dialog) — à insérer JUSTE APRÈS le HERO:
+Section Title: "Pour qui est fait SYLIONAI ?"
+
+Carte A:
+- Titre: "Vous êtes déjà sur 360dialog"
+- Bullets:
+  - "Connexion rapide"
+  - "Mise en production immédiate"
+  - "Traçabilité & audit"
+
+Carte B:
+- Titre: "Vous voulez passer sur 360dialog"
+- Bullets:
+  - "Accompagnement création & validation"
+  - "Mise en conformité WhatsApp Business"
+  - "Prestation facturée, clé en main"
+
+NETTOYAGE SCROLL:
+- Identifier les sections trop longues APRÈS le HERO et:
+  - fusionner celles qui répètent la valeur
+  - limiter chaque section à: 1 titre + 1 phrase + 3 bullets max
+  - supprimer toute répétition marketing.
+
+CTA:
+- Conserver les CTA existants du HERO (texte et style inchangés).
+- Réduire les CTA secondaires à un seul CTA final si nécessaire.
+
+OUTPUT:
+- Diff minimal.
+- Modifier uniquement les fichiers nécessaires.
+- Ne pas recréer la page from scratch.
+- Ne fournir que le code final des fichiers modifiés.
+- Le build doit compiler.
+
+CHECKLIST AVANT DE RENDRE:
+- Le HERO est visuellement identique à la capture.
+- Aucune référence géographique (Maroc, marocaine, etc.).
+- La cible est exprimée uniquement via TPE / sociétés / entreprises.
+- La page est plus courte et plus lisible.
