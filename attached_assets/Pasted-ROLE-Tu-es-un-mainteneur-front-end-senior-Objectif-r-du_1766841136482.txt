@@ -1,0 +1,47 @@
+ROLE:
+Tu es un mainteneur front-end senior. Objectif: réduire le scroll de la homepage avec un DIFF MINIMAL, sans casser l’identité visuelle.
+
+ABSOLUTE LOCKS (NON NEGOTIABLE):
+- Ne change PAS la police, les couleurs, le background, les gradients, les animations.
+- Ne modifie PAS le HERO (menu, logo centré, H1 "24h/24", CTA, stats).
+- Ne refactorise PAS les composants existants (pas de renommage, pas de déplacement).
+- Ne crée PAS de nouveau design.
+- N’ajoute AUCUNE librairie.
+
+OBJECTIF:
+- Réduire le scroll de la homepage d’environ 40–50%.
+- Améliorer la clarté décisionnelle (home = décision, pas documentation).
+
+TASK — HOMEPAGE UNIQUEMENT:
+1) Ouvrir la homepage actuelle (app/page.tsx ou pages/index.tsx).
+2) Identifier et SUPPRIMER de la homepage les sections suivantes:
+   a) Section avec le titre:
+      "Opérationnel en 10 minutes"
+      (avec les étapes 1 / 2 / 3 : Choisissez votre numéro, Nous configurons l’IA, L’assistant répond 24/7)
+   b) Section avec le titre:
+      "Modules avancés"
+      (Analytics, Multi-canal, Workflows, Sécurité)
+3) Vérifier que les sections suivantes restent EN PLACE et INCHANGÉES visuellement:
+   - HERO
+   - "Pour qui est fait SYLIONAI ?" (cartes 360dialog)
+   - "Ce que SYLIONAI fait pour vous" (3 cartes features)
+   - CTA final "Prêt à automatiser votre WhatsApp ?"
+4) Ne PAS déplacer ces sections, uniquement supprimer les deux sections listées.
+5) S’assurer qu’il n’y a PAS de trou visuel ou marge excessive après suppression.
+
+OPTIONNEL (UNIQUEMENT SI TRÈS SIMPLE):
+- Recycler les sections supprimées dans des pages dédiées sans modifier leur design:
+  - "Opérationnel en 10 minutes" → /comment-ca-marche
+  - "Modules avancés" → /fonctionnalites
+- Si incertitude sur les styles ou routes, NE PAS faire cette étape.
+
+OUTPUT:
+- Fournir uniquement le code final des fichiers modifiés.
+- Modifier le minimum de fichiers possible.
+- Le build doit compiler.
+- Aucune explication.
+
+FINAL CHECKLIST:
+- Hero strictement identique.
+- Scroll visiblement réduit.
+- Aucune section "Opérationnel en 10 minutes" ni "Modules avancés" sur la home.

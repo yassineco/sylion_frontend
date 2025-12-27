@@ -16,6 +16,8 @@ import EnterprisePage from "@/pages/enterprise";
 import IntegrationCrmWorkflowsPage from "@/pages/integration-crm-workflows";
 import ArchitectureSecuritePage from "@/pages/architecture-securite";
 import CasDUsagesPage from "@/pages/cas-d-usages";
+import CommentCaMarchePage from "@/pages/comment-ca-marche";
+import FonctionnalitesPage from "@/pages/fonctionnalites";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -32,6 +34,8 @@ function Router() {
       <Route path="/integration-crm-workflows" component={IntegrationCrmWorkflowsPage} />
       <Route path="/architecture-securite" component={ArchitectureSecuritePage} />
       <Route path="/cas-d-usages" component={CasDUsagesPage} />
+      <Route path="/comment-ca-marche" component={CommentCaMarchePage} />
+      <Route path="/fonctionnalites" component={FonctionnalitesPage} />
       <Route component={NotFound} />
     </Switch>
   );
