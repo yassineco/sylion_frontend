@@ -110,15 +110,14 @@ export default function PricingPage() {
         
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 rounded-full bg-[#4F46E5]/10 border border-[#4F46E5]/30 text-[#4F46E5] text-sm font-medium mb-6">
-            Positionnement Premium
+            Plateforme WhatsApp IA professionnelle
           </span>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] bg-clip-text text-transparent">
-            Tarifs SYLION – Positionnement Premium assumé
+            Une solution fiable, à un tarif maîtrisé
           </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            SYLION est une solution WhatsApp IA premium conçue pour les PME ambitieuses et les grands comptes : 
-            sécurité, intégrations, support FR/Darija et architecture scalable. 
-            Nos tarifs reflètent cette exigence, tout en restant largement inférieurs au coût d'un agent dédié.
+            Architecture robuste pensée pour durer. Support multilingue, intégrations CRM et sécurité inclus. 
+            Un investissement clair, bien en dessous du coût d'un agent dédié.
           </p>
         </div>
 
